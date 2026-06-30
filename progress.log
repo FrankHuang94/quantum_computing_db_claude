@@ -1,0 +1,35 @@
+# Quantum Computing Technical Knowledge Database — Build Progress Log
+
+Branch: claude/quantum-computing-db-3dt1cf
+Target: >= 100,000 words total; primary files (02,03,04,05,09,11,12,13,18,20,25) >= 12,000 words each.
+
+## Status
+- [ ] 01_overview_and_landscape.md
+- [ ] 02_quantum_mechanics_fundamentals_for_computing.md (PRIMARY)
+- [ ] 03_superconducting_qubits.md (PRIMARY)
+- [ ] 04_trapped_ion_qubits.md (PRIMARY)
+- [ ] 05_neutral_atom_qubits.md (PRIMARY)
+- [ ] 06_photonic_quantum_computing.md
+- [ ] 07_other_qubit_modalities.md
+- [ ] 08_quantum_gates_circuits_and_compilation.md
+- [ ] 09_quantum_error_correction.md (PRIMARY)
+- [ ] 10_quantum_error_mitigation.md
+- [ ] 11_control_electronics_and_cryogenics.md (PRIMARY)
+- [ ] 12_quantum_software_stack_and_compilers.md (PRIMARY)
+- [ ] 13_quantum_algorithms_deep_dive.md (PRIMARY)
+- [ ] 14_classical_simulation_of_quantum_circuits.md
+- [ ] 15_quantum_networking_and_communication.md
+- [ ] 16_quantum_sensing_and_metrology.md
+- [ ] 17_nisq_applications_and_use_cases.md
+- [ ] 18_fault_tolerant_resource_estimation.md (PRIMARY)
+- [ ] 19_company_roadmaps_and_milestones.md
+- [ ] 20_vendor_and_competitive_landscape.md (PRIMARY)
+- [ ] 21_national_programs_and_geopolitics.md
+- [ ] 22_benchmarking_and_performance_metrics.md
+- [ ] 23_materials_and_fabrication.md
+- [ ] 24_business_market_and_investment.md
+- [ ] 25_future_research_frontiers.md (PRIMARY)
+- [ ] README.md (master index)
+
+## Log
+(entries appended after each committed file)
