@@ -541,3 +541,27 @@ Each stage gates the next, and the credibility of vendor roadmaps (File 19) is b
 ### 60. Final synthesis
 
 The superconducting qubit is the field's pragmatic workhorse: not the most coherent (ions, atoms win), not the most connected (ions win), not the most numerous (neutral atoms win), and not free of cryogenics (ions, atoms, photons partially win) — but the *fastest*, the most *fabrication-scalable*, the best-matched to the *surface code*, and the platform with the *deepest control/fabrication engineering base and investment*. These advantages delivered the first quantum-supremacy claim, the first contested utility demonstration, and — most importantly — the first convincing below-threshold error correction. Whether they carry through to utility-scale fault tolerance depends on conquering the coherence, fidelity, wiring, connectivity, and correlated-error problems enumerated in Part XI, and on the modular-qLDPC architectural bet paying off. The reader should now turn to the complementary modalities (Files 4–7) to understand the full hardware trade-space, to File 9 to see how the surface code is engineered onto this connectivity, to File 11 for the cryogenic/control infrastructure these qubits demand, and to File 23 for the materials science that ultimately sets their coherence.
+
+---
+
+## Appendix — Superconducting Glossary and Key Numbers
+
+- **Josephson junction:** two superconductors separated by a thin insulating barrier; a lossless nonlinear inductor (I = I_c sin φ), the source of qubit anharmonicity.
+- **Transmon:** capacitively shunted Cooper-pair box operated at E_J/E_C ≫ 1; exponentially charge-noise-insensitive; the dominant superconducting qubit (ω₀₁ ≈ 4–6 GHz, α ≈ −250 MHz).
+- **Fluxonium:** junction shunted by a superinductance; larger anharmonicity and longer T₁ (>1 ms) at the cost of control complexity.
+- **E_J, E_C:** Josephson and charging energies; E_J = ℏI_c/2e, E_C = e²/2C; their ratio sets the charge-noise/anharmonicity trade-off.
+- **Anharmonicity (α ≈ −E_C):** the |1⟩→|2⟩ vs |0⟩→|1⟩ frequency difference; isolates the qubit transition; small in transmons (leakage risk).
+- **Circuit QED / dispersive readout:** qubit coupled to a microwave resonator; state-dependent resonator shift χ enables QND readout.
+- **Dispersive shift χ ≈ g²/Δ:** the resonator frequency pull per qubit state.
+- **Purcell filter:** notch filter protecting qubit T₁ from decaying through the readout line.
+- **JPA / TWPA:** Josephson / traveling-wave parametric amplifiers; quantum-limited preamplification enabling fast single-shot, multiplexed readout.
+- **Cross-resonance (CR) gate:** all-microwave ZX entangling gate (IBM fixed-frequency), 200–400 ns.
+- **Tunable-coupler CZ gate:** flux-activated |11⟩–|02⟩ resonance gate (Google, IBM Heron), 20–30 ns, with ZZ nulling.
+- **DRAG:** derivative-based pulse shaping suppressing leakage to |2⟩.
+- **TLS (two-level systems):** atomic-scale dielectric defects, the dominant T₁/T₂ limiter; minimized via surface participation engineering and materials (tantalum).
+- **Quasiparticles:** broken Cooper pairs causing T₁ loss and correlated (cosmic-ray) error bursts.
+- **Heavy-hex lattice:** degree-≤3 topology (IBM) reducing frequency collisions for CR gates.
+- **Flip-chip:** 3D integration separating qubit and wiring chips via indium bumps.
+- **Key numbers:** operating T ≈ 10–20 mK; T₁/T₂ ≈ 50–300 μs (record >1 ms); 1q fidelity >99.9%; 2q fidelity 99.5–99.9%; readout >99% in 200–1000 ns; ~97 physical qubits per d=7 logical qubit.
+
+These terms and numbers recur across Files 9 (QEC), 11 (cryo/control), 18 (resource estimation), 19–20 (roadmaps/vendors), 22 (benchmarking), and 23 (materials), where superconducting hardware parameters are the inputs to architecture and strategy decisions.

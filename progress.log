@@ -6,7 +6,7 @@ Target: >= 100,000 words total; primary files (02,03,04,05,09,11,12,13,18,20,25)
 ## Status
 - [x] 01_overview_and_landscape.md (3,516 w)
 - [x] 02_quantum_mechanics_fundamentals_for_computing.md (PRIMARY, 12,000+ w)
-- [ ] 03_superconducting_qubits.md (PRIMARY)
+- [x] 03_superconducting_qubits.md (PRIMARY, 12,000+ w)
 - [ ] 04_trapped_ion_qubits.md (PRIMARY)
 - [ ] 05_neutral_atom_qubits.md (PRIMARY)
 - [ ] 06_photonic_quantum_computing.md
@@ -34,3 +34,4 @@ Target: >= 100,000 words total; primary files (02,03,04,05,09,11,12,13,18,20,25)
 ## Log
 (entries appended after each committed file)
 - 2026-06-30: FILE 01 committed (3,516 w). FILE 02 committed (PRIMARY, >12,000 w).
+- 2026-06-30: FILE 03 committed (PRIMARY, >12,000 w).
