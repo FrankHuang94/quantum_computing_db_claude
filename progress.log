@@ -9,8 +9,8 @@ Target: >= 100,000 words total; primary files (02,03,04,05,09,11,12,13,18,20,25)
 - [x] 03_superconducting_qubits.md (PRIMARY, 12,000+ w)
 - [x] 04_trapped_ion_qubits.md (PRIMARY, 12,000+ w)
 - [x] 05_neutral_atom_qubits.md (PRIMARY, 12,000+ w)
-- [ ] 06_photonic_quantum_computing.md
-- [ ] 07_other_qubit_modalities.md
+- [x] 06_photonic_quantum_computing.md (4,605 w)
+- [x] 07_other_qubit_modalities.md (4,600+ w)
 - [ ] 08_quantum_gates_circuits_and_compilation.md
 - [ ] 09_quantum_error_correction.md (PRIMARY)
 - [ ] 10_quantum_error_mitigation.md
@@ -37,3 +37,4 @@ Target: >= 100,000 words total; primary files (02,03,04,05,09,11,12,13,18,20,25)
 - 2026-06-30: FILE 03 committed (PRIMARY, >12,000 w).
 - 2026-06-30: FILE 04 committed (PRIMARY, >12,000 w).
 - 2026-07-01: FILE 05 committed (PRIMARY, >12,000 w). Total ~51k words (files 01-05).
+- 2026-07-01: FILES 06, 07 committed (standard). Running total ~65k words.
