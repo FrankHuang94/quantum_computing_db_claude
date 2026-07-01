@@ -203,3 +203,39 @@ The QKD-vs-PQC divergence in national strategy (File 15) reflects different asse
 The geopolitical dimension of quantum computing centers on its *unique national-security significance* — the ability to break public-key cryptography (Shor's algorithm, File 13) — which drives both national investment (offense/capability) and the post-quantum-cryptography migration (defense). Major national programs (US NQI with its coordinated investment and DARPA US2QC assessment; China's large, opaque, communication-strong program; the EU Quantum Flagship; the UK's diverse-modality hub; and sovereign bets like Australia's PsiQuantum co-investment) reflect quantum computing's recognized strategic importance, and export controls treat it (like advanced semiconductors) as a controlled strategic technology with a controllable enabling supply chain (cryogenics, ³He, lasers, File 11). The *dominant near-term issue* is the **PQC transition** — NIST's standardized classical algorithms (Kyber/ML-KEM, Dilithium/ML-DSA) deployed *now*, driven by the **"harvest now, decrypt later"** threat that makes long-term-sensitive data *already at risk* even though the CRQC (File 18) is years away — arguably the largest current quantum-computing-adjacent economic activity (though technically a classical-cryptography response, File 24). The geopolitical-competition framing (the "quantum race," especially US-China) is real but should be calibrated: a long-horizon competition for capability (File 18) coexisting with international scientific collaboration, not an imminent zero-sum finish. Talent migration and immigration policy are a quiet but significant competitive factor (File 24), and the QKD-vs-PQC divergence (File 15, China's QKD emphasis vs. the West's PQC mainstream) reflects differing defensive strategies. The disciplined view holds both the genuine strategic dimension (cryptography, national security) and the calibrated timeline (CRQC years away, File 18), driving the rational near-term response — PQC migration now — while the long-term capability competition unfolds. The geopolitics of quantum computing is thus dominated by the cryptographic dimension: build the capability (offense, long-term), defend against it (PQC, near-term), and compete/collaborate internationally (strategic, calibrated) — the policy face of the technology whose physics, resources, and companies the database's other files develop.
 
 *Cross-references: Shor's algorithm and the cryptographic threat (File 13); resource estimation of the CRQC timeline (File 18); QKD vs. PQC and the Micius satellite (File 15); companies as national champions and government funding (File 20); DARPA US2QC as independent roadmap assessment (File 19); the PQC-migration economic activity and market sizing (File 24); enabling supply chain and export-controlled components — cryogenics, ³He (File 11); the international talent concentration (File 20).*
+
+---
+
+## Appendix — PQC Migration Practicalities and Policy Timeline
+
+### The NIST PQC standards (2024)
+
+- **ML-KEM (FIPS 203, formerly CRYSTALS-Kyber):** lattice-based key encapsulation — the primary key-exchange standard.
+- **ML-DSA (FIPS 204, formerly CRYSTALS-Dilithium):** lattice-based digital signatures — the primary signature standard.
+- **SLH-DSA (FIPS 205, formerly SPHINCS+):** hash-based (stateless) signatures — a conservative backup relying only on hash-function security.
+- **FN-DSA (Falcon):** lattice-based signatures for size-constrained applications (standardization ongoing).
+
+The reliance on *lattice-based* cryptography (for the primary standards) rests on the conjectured hardness of lattice problems even for quantum computers — including the non-abelian hidden-subgroup problem's difficulty (File 13), which is *not* known to be efficiently quantum-solvable. The *hash-based* backup (SLH-DSA) provides diversity in case lattice cryptography has an undiscovered weakness (classical or quantum) — a hedge reflecting cryptographic conservatism.
+
+### The migration timeline (US federal, representative)
+
+- **2022:** NSM-10 directs federal agencies to prepare for PQC migration; OMB requires cryptographic inventories.
+- **2024:** NIST finalizes the first PQC standards (FIPS 203/204/205).
+- **~2025–2030:** federal agencies migrate priority systems; CNSA 2.0 timelines mandate PQC for national-security systems.
+- **~2030–2035:** target for broad federal migration completion.
+
+Other governments (EU, UK, and others) have parallel timelines. The multi-year horizon reflects the migration's scale (Section 10) — and the HNDL threat (Section 9) means the migration must proceed *now* for long-term-sensitive data, even as it completes over the coming decade.
+
+### Practical migration challenges
+
+- **Cryptographic inventory:** organizations must first *find* all their cryptographic dependencies (often poorly documented) — a prerequisite and a major effort.
+- **Performance:** PQC algorithms have *larger* keys/signatures and different performance profiles, requiring testing and sometimes protocol/infrastructure changes.
+- **Legacy systems:** embedded and legacy systems with long lifecycles (industrial, IoT, satellites) are hard to update, creating long-lived vulnerabilities.
+- **Hybrid deployment:** running classical+PQC in parallel during the transition adds complexity but provides defense-in-depth.
+- **Crypto-agility:** building systems that can *readily* update algorithms (in case a PQC standard is later broken) is a long-term goal.
+
+These challenges make the PQC migration a substantial, multi-year, cross-industry undertaking (File 24) — the concrete, near-term face of quantum computing's policy impact, driven by a *future* threat (the CRQC, File 18) with *present* consequences (HNDL, Section 9). It is the clearest example of quantum computing shaping policy and economic activity *today*, years before a useful quantum computer exists — a striking illustration of how the *anticipated* capability (File 18) drives concrete present action, and the dominant near-term geopolitical/policy dimension of the technology.
+
+### Final note
+
+The geopolitics of quantum computing is dominated by its cryptographic dimension: nations invest in the capability (national programs, Part I), control its diffusion (export controls, Part II), and — most concretely and urgently — migrate to post-quantum cryptography (Part III) against the harvest-now-decrypt-later threat, all while competing and collaborating internationally on a long-horizon timeline (File 18). The PQC migration is the near-term policy priority and the largest quantum-adjacent economic activity, driven by resource-estimation-informed (File 18) assessment of a future threat with present consequences. Understanding this geopolitical dimension — the strategic significance, the dual offense/defense response, the calibrated competition, and the concrete PQC migration — completes the policy face of quantum computing, complementing the technology (Files 2–13), resources (File 18), and commercial landscape (File 20) the database develops, and grounding the technology's societal and strategic implications in the disciplined, evidence-based assessment the database maintains throughout.

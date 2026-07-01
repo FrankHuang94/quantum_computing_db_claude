@@ -24,7 +24,7 @@ Target: >= 100,000 words total; primary files (02,03,04,05,09,11,12,13,18,20,25)
 - [x] 18_fault_tolerant_resource_estimation.md (PRIMARY, 12,000+ w)
 - [x] 19_company_roadmaps_and_milestones.md (~3,800 w)
 - [x] 20_vendor_and_competitive_landscape.md (PRIMARY, 12,000+ w)
-- [ ] 21_national_programs_and_geopolitics.md
+- [x] 21_national_programs_and_geopolitics.md (4,000+ w)
 - [ ] 22_benchmarking_and_performance_metrics.md
 - [ ] 23_materials_and_fabrication.md
 - [ ] 24_business_market_and_investment.md
@@ -46,3 +46,4 @@ Target: >= 100,000 words total; primary files (02,03,04,05,09,11,12,13,18,20,25)
 - 2026-07-01: FILES 15, 16 committed. Total ~128k words.
 - 2026-07-01: FILES 17, 18 committed. FILE 18 PRIMARY >12,000 w.
 - 2026-07-01: FILES 19, 20 committed. FILE 20 PRIMARY.
+- 2026-07-01: FILE 21 committed. Total ~165k words.
