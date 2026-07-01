@@ -528,3 +528,40 @@ The modular multi-fridge answer (Sections 10, 56) sounds simple but hides a hard
 The classical infrastructure — dilution refrigeration, cryogenic wiring, amplifier chains, control electronics, real-time decoders, and laser/optical systems — is the substrate on which quantum computing runs and, for the leading modalities, its dominant scaling bottleneck. The microwatt cooling budget creates the wiring bottleneck; the laser complexity creates its atomic analogue; and the solutions — cryo-CMOS, integrated photonics, multiplexing, modular interconnects, decoder ASICs, and transduction — are hard, partly-unsolved integration problems that determine the physical feasibility, economic viability, and timeline of fault-tolerant quantum computing as much as qubit quality and error-correction overhead do. The co-scaling imperative and the three-pillar interplay (fidelity, code overhead, infrastructure) developed here feed directly into resource estimation (File 18), where these parameters compose into concrete machine specifications, and into roadmap assessment (File 19), where a company's or modality's infrastructure-scaling plan is a first-order determinant of credibility. The reader who carries forward this file's central lesson — that the "boring" classical infrastructure is a co-equal grand challenge, and that its *integration* is the common solution shape and a prerequisite for utility — will assess the field's progress and prospects far more accurately than one who tracks qubit counts alone. Proceed to File 12 for the software stack that sits atop this infrastructure, and to File 18 for the resource estimation that composes infrastructure, code, and fidelity into the physical-qubit and runtime numbers defining the path to useful quantum computing.
 
 > **One-paragraph summary of File 11.** A quantum computer is a co-scaled quantum–classical system whose *classical* infrastructure — millikelvin dilution refrigeration (superconducting/spin) or stabilized-laser/UHV systems (atomic) or cryogenic detectors (photonic), plus the control electronics, quantum-limited amplifiers, and real-time decoders — is, for the leading modalities, the dominant scaling bottleneck. The dilution refrigerator's microwatt cooling budget caps qubits-per-fridge and creates the wiring bottleneck; atomic qubits face the analogous laser bottleneck; and both are addressed by *integration* (cryo-CMOS, integrated photonics, multiplexing, modular interconnects, decoder ASICs, microwave-to-optical transduction), which is itself a set of hard, partly-unsolved problems that gate the physical feasibility, cost, and timeline of fault tolerance as much as qubit quality and error-correction overhead do. Infrastructure integration is a co-equal grand challenge, systematically underweighted by the qubit-count narrative, and the single most important "hidden" determinant of the path to utility.
+
+---
+
+## Appendix — Representative Infrastructure Parameters and Design Rules
+
+### Representative parameters (current era; re-verify)
+
+| Parameter | Representative value |
+|---|---|
+| Superconducting qubit temperature | 10–20 mK |
+| Spin qubit temperature | <100 mK – 1 K |
+| Ion/atom qubit temperature | room temp (trap chip sometimes 4–10 K) |
+| SNSPD detector temperature | 1–4 K |
+| Mixing-chamber cooling power | ~10–1000 μW |
+| 4 K stage cooling power | ~1–2 W |
+| Attenuation (drive line) | ~40–60 dB distributed across stages |
+| Parametric amp added noise | ~½ photon (quantum limit) |
+| Control channels per qubit (SC) | ~2–3 (drive, flux, shared readout) |
+| Readout multiplexing factor | ~6–20 qubits per feedline (growing) |
+| Real-time decode latency budget (SC) | ~1 μs per cycle |
+| Qubits per fridge (current) | ~100–1000 (conventional wiring) |
+| Dilution refrigerator cost | ~$0.5–3M |
+| Laser linewidth (optical qubit/Rydberg) | kHz to sub-Hz (cavity-stabilized) |
+| UHV pressure (atomic) | ≤10⁻¹¹ torr |
+
+### Design rules of thumb
+
+1. **The control field must be quieter than the qubit** (microwave phase noise / laser linewidth below the qubit's coherence-limiting scale) — else control noise, not the qubit, limits fidelity (Sections 15, 34).
+2. **Heat load scales with wire count; cooling power at 10 mK is nearly fixed** — so qubits-per-fridge is capped, requiring cryo-CMOS + multiplexing + modular fridges to scale (Sections 4, 24, 56).
+3. **Cryo-CMOS is bounded by the 4 K power budget** — sub-μW/channel is the target for millions of channels (Sections 25, 27).
+4. **Decoding must keep pace with syndrome extraction** — real-time FPGA/ASIC decoders within the cycle-latency budget, parallelized across logical qubits (Sections 14, 48).
+5. **Superconducting wiring is used where T < the material's critical temperature** — low signal loss with low heat conduction (Section 46).
+6. **Every downward line must be attenuated, thermalized, and filtered** at each stage to deliver clean signals without carrying thermal noise or IR photons to the qubit (Section 5).
+7. **Modular scaling requires quantum interconnects** (transduction or photonic links), not yet mature — "just add fridges" is a research program (Section 59).
+8. **Integration is the universal solution shape** — cryo-CMOS, integrated photonics, decoder ASICs, on-chip nonreciprocal elements — replacing bespoke discrete infrastructure with manufacturable integrated systems, for both physical feasibility and cost scaling (Sections 38, 49).
+
+These parameters and rules are the practical distillation of the file: they are what a systems engineer uses to estimate a machine's qubits-per-fridge, control-channel count, decoding load, and scaling path, and they are inputs to the resource estimation of File 18. Together with the co-scaling imperative (a machine scales only as fast as its slowest layer, currently the classical infrastructure), they equip the reader to assess any modality's or company's true scaling prospects — looking past the qubit count to the fridges, the control integration, the decoders, and the interconnects that will actually determine whether, and when, useful fault-tolerant quantum computing arrives.
