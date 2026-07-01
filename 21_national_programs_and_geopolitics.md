@@ -148,3 +148,58 @@ Policymakers must assess *when* a CRQC (File 18) might exist to plan the PQC mig
 - **The policy response:** because of HNDL (Section 9) and the long migration time (Section 10), the PQC migration must happen *now* — the *uncertainty* in the CRQC timeline, combined with the *present* HNDL threat and the *multi-year* migration, justifies *immediate* migration regardless of the exact CRQC date.
 
 This worked analysis shows how resource estimation (File 18) informs policy (File 21): the CRQC timeline is uncertain and long, but the HNDL threat and migration time justify *acting now* — a rational response to a future threat under uncertainty. It exemplifies the resource-estimation-to-policy connection (File 18), and it is why the PQC migration (Part III) is *already in motion* despite the CRQC being years away.
+
+---
+
+## Part V — Strategic Assessment, Glossary, and Summary
+
+### 14. Comparing national strategies
+
+The major programs reflect distinct *national strategies*:
+
+| Program | Strategy | Strength | Distinctive feature |
+|---|---|---|---|
+| US (NQI) | Coordinated investment + industry | Academic + corporate depth, capital | DARPA US2QC independent assessment |
+| China | State-directed, large-scale | Quantum communication (Micius) | Opacity; supremacy-claim cadence |
+| EU Flagship | Coordinated continental research | Academic depth (QuTech, Innsbruck) | €1B decade program |
+| UK NQTP | Diverse-modality hub | Early start, startup formation | "Let many approaches compete" |
+| Australia | Focused sovereign bets | Spin qubits (SQC), PsiQuantum | Large sovereign co-investment |
+
+The strategies vary — US (industry + coordinated investment + independent assessment), China (state-directed, communication-strong, opaque), EU (coordinated continental research), UK (diverse startup hub), Australia (focused sovereign bets) — reflecting different national strengths and approaches. No single strategy is clearly best; they reflect each nation's academic base, industrial structure, and strategic priorities. The competition among these strategies (Section 12) is a long-horizon test of which national approach best cultivates quantum capability.
+
+### 15. The dual response: offense and defense
+
+Nations pursue a *dual response* to quantum computing's cryptographic dimension (Part II):
+
+- **Offense (building a CRQC):** national programs (Part I) fund quantum-computing development, partly motivated by the strategic value of a CRQC (Part II) — the offensive interest in eventually breaking adversaries' cryptography.
+- **Defense (PQC migration):** simultaneously, nations migrate to PQC (Part III) to protect their *own* cryptography against a future CRQC (their own or an adversary's).
+
+This dual response — building the capability while defending against it — is characteristic of strategic dual-use technologies, and it means nations invest in *both* quantum computing (offense/capability) *and* PQC migration (defense). The PQC migration (Part III, defensive) is the *near-term* priority (deployable now, urgent due to HNDL), while quantum-computing development (offensive/capability) is the *long-term* investment (File 18). Both are driven by the same underlying cryptographic dimension (Part II).
+
+### 16. QKD vs. PQC in national strategy (recap from File 15)
+
+Nations differ in their emphasis on QKD (File 15) vs. PQC (Part III) for the defensive response:
+
+- **PQC (mainstream):** the US and most Western nations prioritize *PQC* (classical, software-deployable, addresses the full stack) as the primary defense — NIST's standardization (Part III) leads globally.
+- **QKD (China's emphasis):** China has invested heavily in *QKD* (File 15) — the Micius satellite and metro QKD networks — as a physics-based defensive layer, reflecting a different strategic emphasis (though QKD is niche and hardware-heavy, File 15, and Western agencies like NSA have expressed skepticism about QKD's practicality vs. PQC).
+
+The QKD-vs-PQC divergence in national strategy (File 15) reflects different assessments of the two approaches — PQC (mainstream, practical) vs. QKD (physics-based, niche) — with China notably more invested in QKD. This is a real strategic divergence, and the PQC-vs-QKD distinction (File 15) is important for understanding national quantum-security strategies.
+
+### 17. Glossary
+
+- **National Quantum Initiative (NQI):** the 2018 US federal quantum program (NSF, DOE, NIST).
+- **DOE QIS Research Centers:** five national-lab-anchored US research hubs (Q-NEXT, C²QA, SQMS, QSC, QSA).
+- **DARPA US2QC:** the program funding independent assessments of companies' fault-tolerant roadmaps.
+- **EU Quantum Flagship:** the €1B, decade-long EU research program.
+- **CRQC (cryptographically-relevant quantum computer):** a quantum computer capable of breaking public-key cryptography (Shor, File 13).
+- **Post-quantum cryptography (PQC):** classical algorithms resistant to quantum attack (NIST-standardized: ML-KEM/Kyber, ML-DSA/Dilithium, SLH-DSA/SPHINCS+).
+- **Harvest now, decrypt later (HNDL):** recording encrypted data now to decrypt once a CRQC exists — drives PQC urgency.
+- **Crypto-agility:** the ability to update cryptographic algorithms readily — a goal of the PQC migration.
+- **Export controls:** restrictions on quantum-technology and enabling-component export for national security.
+- **Micius:** China's quantum-communication satellite (File 15).
+
+### 18. Reader's takeaway and summary
+
+The geopolitical dimension of quantum computing centers on its *unique national-security significance* — the ability to break public-key cryptography (Shor's algorithm, File 13) — which drives both national investment (offense/capability) and the post-quantum-cryptography migration (defense). Major national programs (US NQI with its coordinated investment and DARPA US2QC assessment; China's large, opaque, communication-strong program; the EU Quantum Flagship; the UK's diverse-modality hub; and sovereign bets like Australia's PsiQuantum co-investment) reflect quantum computing's recognized strategic importance, and export controls treat it (like advanced semiconductors) as a controlled strategic technology with a controllable enabling supply chain (cryogenics, ³He, lasers, File 11). The *dominant near-term issue* is the **PQC transition** — NIST's standardized classical algorithms (Kyber/ML-KEM, Dilithium/ML-DSA) deployed *now*, driven by the **"harvest now, decrypt later"** threat that makes long-term-sensitive data *already at risk* even though the CRQC (File 18) is years away — arguably the largest current quantum-computing-adjacent economic activity (though technically a classical-cryptography response, File 24). The geopolitical-competition framing (the "quantum race," especially US-China) is real but should be calibrated: a long-horizon competition for capability (File 18) coexisting with international scientific collaboration, not an imminent zero-sum finish. Talent migration and immigration policy are a quiet but significant competitive factor (File 24), and the QKD-vs-PQC divergence (File 15, China's QKD emphasis vs. the West's PQC mainstream) reflects differing defensive strategies. The disciplined view holds both the genuine strategic dimension (cryptography, national security) and the calibrated timeline (CRQC years away, File 18), driving the rational near-term response — PQC migration now — while the long-term capability competition unfolds. The geopolitics of quantum computing is thus dominated by the cryptographic dimension: build the capability (offense, long-term), defend against it (PQC, near-term), and compete/collaborate internationally (strategic, calibrated) — the policy face of the technology whose physics, resources, and companies the database's other files develop.
+
+*Cross-references: Shor's algorithm and the cryptographic threat (File 13); resource estimation of the CRQC timeline (File 18); QKD vs. PQC and the Micius satellite (File 15); companies as national champions and government funding (File 20); DARPA US2QC as independent roadmap assessment (File 19); the PQC-migration economic activity and market sizing (File 24); enabling supply chain and export-controlled components — cryogenics, ³He (File 11); the international talent concentration (File 20).*
