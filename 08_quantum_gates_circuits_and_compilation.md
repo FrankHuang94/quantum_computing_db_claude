@@ -158,3 +158,31 @@ This fault-tolerant compilation stack is where the T-counts and code parameters 
 ### 23. Summary and forward pointer
 
 Compilation transforms an abstract algorithm into physical operations through a leaky, noise-aware, continuously-recalibrated pipeline: decomposition to native gates (KAK, Clifford+T, virtual-Z), NP-hard mapping and SWAP routing (SABRE — trivial for all-to-all ions, transport-based for neutral atoms, costly for sparse superconducting), crosstalk-aware scheduling, pulse-level control with drifting calibration, and optimization (cancellation, ZX-calculus, approximate synthesis, randomized compiling). The routing overhead is a central NISQ performance tax that rewards connectivity (Files 4, 5, 22), and the T-count from synthesis is the central fault-tolerant cost that drives magic-state factories and hence machine size (Files 9, 18). Every choice in this pipeline — placement, routing, scheduling, pulse shaping, T-count optimization — affects whether a real computation succeeds and whether it beats classical methods (Files 14, 17). The software frameworks that implement all of this (Qiskit, Cirq, TKET, PennyLane, and the intermediate representations OpenQASM and QIR) are the subject of File 12, and the fault-tolerant extensions feed the error-correction and resource-estimation analyses of Files 9 and 18.
+
+---
+
+## Part VII — Compilation for Variational and Cloud Workflows
+
+### 24. Compiling parameterized circuits
+
+The dominant NISQ execution pattern (Files 12, 13) is the **variational loop**: a *parameterized* circuit U(θ) is executed many times with different parameter values θ chosen by a classical optimizer. This imposes special compilation requirements:
+
+- **Parameter-aware transpilation:** the circuit *structure* (which gates on which qubits) is fixed across iterations; only rotation *angles* change. Efficient stacks compile the structure *once* (placement, routing, scheduling) and then *bind* new parameter values each iteration without re-running the expensive routing/placement passes — a major speedup for the thousands of executions a variational run needs.
+- **Batching:** many parameter variants (e.g., the shifted circuits for parameter-shift gradients, File 13) are compiled and submitted together to amortize overhead and reduce queue round-trips.
+- **Low per-circuit latency:** because a variational run needs many sequential quantum executions interleaved with classical optimization, minimizing the per-circuit compile-plus-execute latency directly determines the wall-clock time of the whole algorithm — often dominated by queue waits on cloud hardware (Section 25).
+
+Failing to compile parameterized circuits efficiently (e.g., re-routing from scratch every iteration) can make a variational run intractably slow, so this is a first-class concern in NISQ software (File 12).
+
+### 25. Cloud execution, queueing, and the time-to-result reality
+
+Most quantum hardware is accessed via the cloud (File 12): a user submits a compiled circuit, it *queues*, executes, and results return. The practical realities that compilation and workflow design must accommodate:
+
+- **Queue latency dominates.** For shared cloud devices, the *queue wait* (minutes to hours) often vastly exceeds the actual quantum execution time (milliseconds to seconds). "Time to result" for a research experiment is frequently dominated by queueing, not computation — a fundamental workflow constraint that shapes how experiments are designed (batching many circuits per submission, using sessions/reserved access).
+- **Sessions and reserved access.** To mitigate queueing for variational loops (which need many sequential submissions), providers offer **sessions** (IBM Qiskit Runtime sessions) or **reserved/dedicated** hardware windows that keep a device allocated to one user across many circuit executions — essential for practical variational algorithms and for production workloads (Files 12, 20).
+- **Primitive-based execution.** Modern stacks (Qiskit Runtime's Sampler/Estimator primitives, File 12) push the map-optimize-execute-postprocess loop *server-side*, reducing round-trips and integrating error mitigation (File 10) into the execution — a compilation/runtime co-design that hides some latency and standardizes the interface.
+
+These operational realities mean that "compiling a circuit well" is necessary but not sufficient for good performance; the *workflow* (batching, sessions, primitive use) and the *queue dynamics* often matter more for real time-to-result than the compiled circuit's gate count — a practical lesson for anyone using real hardware (Files 12, 17, 22).
+
+### 26. Closing note
+
+Compilation for real quantum computing spans from the mathematics of gate synthesis to the operational realities of drifting calibration and cloud queues. The static picture (decompose, route, schedule, optimize) is only half the story; the dynamic picture — continuously recalibrated devices, parameterized-circuit variational loops, batched cloud submissions, and queue-dominated time-to-result — is what actually determines whether an algorithm runs well in practice. An engineer who masters both the routing/synthesis theory (Sections 1–23) and the variational/cloud workflow reality (Sections 24–25) can extract far more from real hardware than one who treats compilation as a black box. The tools that implement all of this are detailed in File 12; the fault-tolerant compilation that this NISQ-era pipeline foreshadows — with its T-count, magic-state, and lattice-surgery layers — feeds the error-correction and resource-estimation analyses of Files 9 and 18, where compile-time choices become hardware requirements.
