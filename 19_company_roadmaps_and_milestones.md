@@ -152,3 +152,51 @@ Applying these, most aggressive projected-milestone claims should be *discounted
 ### 15. The pattern of roadmap slippage
 
 A historical pattern worth noting: quantum-computing roadmaps have *frequently slipped*, and "useful quantum computing in N years" predictions have repeatedly been revised outward. This is not unique to quantum computing (emerging technologies commonly overpromise near-term timelines) but it is a strong prior: *default to skepticism* toward aggressive near-term roadmap claims, weight demonstrated results over projections, and expect slippage. The companies that have *avoided* the worst slippage (IBM's count milestones, Quantinuum's QV) earn credibility precisely by contrast. The pattern also cautions against the *reverse* error (dismissing the field because roadmaps slip) — the demonstrated results (below-threshold error correction, 48 logical qubits, File 9) are *real progress* even as the *timelines* slip. The disciplined view: credit real demonstrated progress, discount aggressive timelines, and track the resource-estimation-grounded feasibility (File 18) rather than the marketing timeline.
+
+---
+
+## Part V — Milestone Types, Historical Track Records, and Reader's Guide
+
+### 16. Types of milestone and their credibility
+
+Roadmap milestones come in types with different credibility (Part I):
+
+- **Peer-reviewed scientific milestones** (below-threshold error correction, logical qubits, record fidelities): the *most credible* — reproducible, data-backed, independently significant. Weight these highly.
+- **Qubit-count milestones** (Condor 1121 qubits): verifiable but *low-information* (count alone says little about quality, File 1, 22). Credible as facts but limited in significance.
+- **Composite-metric milestones** (quantum volume, #AQ): informative but *potentially favorably-framed* (File 22) — read with awareness of which architecture the metric favors.
+- **Press-release milestones** (announcements without peer review, or metric redefinitions): the *least credible* — warrant skepticism until independently verified.
+- **Revenue/commercial milestones** (contracts, customers): trackable for public companies (File 20) but "revenue" is often R&D-services/pilot revenue, not production (File 24) — read with the market-reality caveats (File 24).
+
+Classifying a milestone by type is the first step in assessing it: a peer-reviewed below-threshold result (Google) is far more credible than a press-release "breakthrough" or a self-defined-metric record. This taxonomy, applied to any milestone claim, sharpens the credibility assessment (Part I).
+
+### 17. Historical track-record examples
+
+Concrete track-record comparisons (Part I) build the assessment:
+
+- **IBM:** announced and hit the Eagle (127, 2021), Osprey (433, 2022), Condor (1121, 2023) count milestones roughly on schedule — a *positive* track record on counts, though the subsequent quality pivot implicitly acknowledged counts weren't the right target.
+- **Google:** delivered peer-reviewed supremacy (2019) and below-threshold error correction (2024) — a *positive* track record on high-impact science, on a research (not product-date) cadence.
+- **Quantinuum:** hit successive quantum-volume records on its announced cadence — a *positive* track record on its stated metric.
+- **Microsoft:** the 2018 Majorana retraction and repeated topological-timeline revisions — a *negative* track record on its flagship program, mandating skepticism.
+- **General industry:** aggressive "useful quantum computing by year X" timelines have repeatedly slipped — a *negative* industry-wide prior on near-term timelines.
+
+These track records are the *evidence base* for weighting future claims: companies with positive track records (IBM counts, Google science, Quantinuum QV) earn more credence; the negative examples (Microsoft topological, industry timeline slippage) mandate skepticism. Track record is the single most reliable credibility indicator (Part I), and these examples calibrate it.
+
+### 18. Reader's guide to roadmaps
+
+For an analyst assessing any quantum-hardware roadmap:
+
+1. **Separate demonstrated from projected** (Part I) — credit peer-reviewed demonstrated results as facts; treat projections as claims.
+2. **Check the track record** — did the company hit its past stated milestones? Slippage discounts future claims.
+3. **Classify the milestone type** (Section 16) — peer-reviewed > count > composite-metric > press-release.
+4. **Assess the metric** (File 22) — is it rigorous or favorably-framed? Is it logical (meaningful) or physical (limited) qubits?
+5. **Ground in resource estimation** (File 18) — is the projected milestone consistent with the resource-estimated feasibility and the modality's scaling challenges (Files 3–7, 11)?
+6. **Weight independent benchmarking** — has the claim been independently verified?
+7. **Default to timeline skepticism** — aggressive near-term timelines commonly slip (Section 15).
+
+Applying this guide separates credible roadmaps from marketing, and it is the roadmap-assessment counterpart to the algorithm checklist (File 13), the NISQ-application checklist (File 17), the resource-estimation interpretation guide (File 18), and the benchmarking rigor (File 22) — together forming the database's coherent, evidence-based framework for assessing quantum-computing claims.
+
+### 19. Final summary
+
+Quantum-hardware roadmaps are forward-looking claims requiring skeptical assessment via a durable framework: track record on past milestones, peer-reviewed vs. press-release, independent benchmarking, metric-shifting awareness, and demonstrated-vs-projected separation. The field's leaders by *demonstrated, peer-reviewed* results — Google (below-threshold error correction), IBM (qLDPC, utility, count milestones), Quantinuum (record QV, logical qubits), QuEra (48 logical qubits) — have the highest credibility for what they've shown; the companies with self-defined metrics (IonQ), retraction-marred programs (Microsoft topological), high-variance single-milestone bets (PsiQuantum), or opacity (Chinese programs) warrant more skepticism. The 2023–2024 field-wide reframing from physical-qubit count to logical-qubit count and application-feasibility crossovers (Files 9, 18) is the mature framing, and roadmaps should be assessed by logical targets and resource-estimated crossovers, not raw counts. Milestones should be classified by type (peer-reviewed > count > composite > press-release), grounded in track record and resource estimation, and read with default timeline skepticism given the industry's pattern of slippage. The durable lesson — credit demonstrated (peer-reviewed, independently-benchmarked) results and track record, discount projected milestones and press releases, and read all metrics with awareness of favorable framing — is the skeptical, evidence-based roadmap assessment this file models, connecting to the benchmarking rigor (File 22), competitive landscape (File 20), resource estimation (File 18), and honest path-to-utility assessment the database maintains throughout. Roadmaps reveal ambition; demonstrated results and track records reveal capability — and it is the latter, not the former, that an analyst should trust.
+
+*Cross-references: hardware modalities and their scaling challenges (Files 3–7, 11); below-threshold error correction and qLDPC as roadmap milestones (File 9); resource estimation grounding feasibility crossovers (File 18); competitive/business positioning (File 20); benchmarking metrics and metric-shifting (File 22); classical rebuttals affecting supremacy claims (File 14); Chinese program opacity (File 21); NISQ-application skepticism tempering near-term claims (File 17); market-revenue reality (File 24).*
