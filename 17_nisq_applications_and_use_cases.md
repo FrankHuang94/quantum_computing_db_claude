@@ -136,3 +136,49 @@ To be clear about what evidence *would* update this skeptical assessment toward 
 - This has *not* yet happened for a useful problem in the NISQ era (analog simulation comes closest, with the moving-target caveat, File 14).
 
 Conversely, the assessment would tilt *more* skeptical if (as has repeatedly happened) more NISQ advantage claims are overturned by classical methods. The honest current state: near-term quantum computing is a bridge and laboratory (capability-building, exploration), not a source of demonstrated practical advantage — and this will remain so until either a benchmarked NISQ advantage on a useful problem materializes (not yet) or fault tolerance (File 18) unlocks the proven exponential advantages (Shor, useful simulation; File 13). Tracking which of these happens — and holding all claims to the checklist standard — is the disciplined posture this file models, and it is the honest foundation for the roadmap-credibility (File 19) and market (File 24) assessments that follow.
+
+---
+
+## Part V — Sector Summary Table, Additional Domains, and Reader's Guide
+
+### 15. Honest sector-by-sector summary
+
+| Sector | Theoretical basis | NISQ demonstrated advantage? | Honest near-term status |
+|---|---|---|---|
+| Quantum chemistry | Strong (exponential, File 13) | No — small molecules, classical handles them | Capability-building; useful needs fault tolerance |
+| Materials science | Strong (simulation) | No | Same as chemistry; analog simulation closest |
+| Optimization (QAOA) | Weak/contested (File 13) | No | Heavily marketed, unproven |
+| Optimization (annealing/D-Wave) | Contested | No (commercially used, not proven-advantaged) | Real customers, contested advantage |
+| Quantum ML | Weak/mostly none | No | Research direction, overhyped |
+| Finance (amplitude estimation) | Moderate (quadratic) | No — needs more qubits/fidelity | Future (early-FT), not near-term |
+| Finance (portfolio opt.) | Weak (QAOA-based) | No | Pilots, unproven |
+| Pharma/drug discovery | Strong (chemistry) but far | No | Long-term R&D bets |
+| Analog quantum simulation | Strong (native) | Closest to yes (contested) | Genuine science; strongest near-term case |
+| Logistics/routing | Weak (optimization) | No | Weak-baseline comparisons common |
+
+The table's overwhelming pattern: *no sector* shows broadly-accepted, reproducible, practically-significant NISQ advantage on a useful problem — the honest bottom line. Analog simulation is the closest (genuine science, contested hardness), and the chemistry/simulation applications are theoretically strongest but require fault tolerance for useful sizes. Optimization, ML, and finance pilots are heavily marketed but unproven.
+
+### 16. Additional domains and their status
+
+- **Energy/materials for batteries and catalysts:** subset of quantum chemistry (Section 1) — real promise, fault-tolerant-era.
+- **Cryptography (breaking):** Shor requires fault tolerance (File 13) — *not* NISQ; the "harvest now, decrypt later" threat (File 21) drives PQC migration regardless of NISQ.
+- **Weather/climate modeling, fluid dynamics:** proposed via quantum differential-equation solvers (File 13) — same I/O-model caveats as HHL, far from useful.
+- **Traffic/supply-chain optimization:** optimization caveats (Section 2, 12) — weak-baseline comparisons common.
+- **Quantum-enhanced sensing** (File 16): the one *adjacent* area with realized advantage — but that is *sensing*, not *computing* (a distinction worth preserving, File 16).
+
+### 17. Reader's guide
+
+For an analyst or engineer assessing a NISQ application claim:
+
+1. **Apply the checklist** (Section 6) — best-run classical baseline, problem size vs. crossover, useful vs. contrived, reproduced, full-stack accounting.
+2. **Identify the comparison baseline** — is "quantum advantage" measured against the *best* classical method or a *weak* one (the company's old approach, or a naive baseline)? Weak-baseline comparisons are the most common overclaim (Section 12).
+3. **Check the maturity spectrum** — is this capability-building/exploration (real near-term value) or a claimed practical advantage (scrutinize hard)?
+4. **Distinguish commercial use from proven advantage** — D-Wave has customers but contested advantage (Section 11); commercial traction ≠ demonstrated superiority.
+5. **Note the fault-tolerance dependency** — the rigorously-grounded applications (chemistry, useful simulation, factoring) need fault tolerance (File 18); near-term versions have unproven advantage.
+6. **Track the moving target** — classical methods improve (File 14); today's advantage may be tomorrow's classical result.
+
+### 18. Final summary
+
+Near-term (NISQ) quantum computing, honestly assessed, delivers *no broadly-accepted, reproducible, practically-significant advantage* over the best classical methods on a *useful* problem — across chemistry, optimization, ML, finance, and pharma — because the low-complexity circuits NISQ handles are often classically tractable (Files 10, 14), the theoretically-strong applications (chemistry, useful simulation) require fault tolerance (File 18), and the near-term pilots (optimization, ML) have unproven, often weak-baseline-inflated advantage. The genuine near-term value is real but lies in *capability-building* (algorithms, software, expertise for the fault-tolerant future), *scientific exploration* (analog simulation of many-body physics — the strongest case), and *hardware/algorithm development* — not in demonstrated practical advantage. The essential skill is the evaluation checklist: demand the best-run classical baseline, assess problem size versus crossover, distinguish useful from contrived tasks and commercial use from proven advantage, require independent reproduction, and track the moving classical target. This disciplined, evidence-based, classically-benchmarked assessment — the antidote to the hype cycle — is the honest calibration this file contributes, connecting the algorithm caveats (File 13), classical-simulation discipline (File 14), mitigation limits (File 10), roadmap-credibility methodology (File 19), and market-reality assessment (File 24) into a realistic picture: near-term quantum computing is a valuable bridge and laboratory, not yet a source of practical advantage, with the transformative proven advantages awaiting fault tolerance.
+
+*Cross-references: contested QAOA/QML advantage and the algorithm speedup landscape (File 13); the classical-simulation moving target and low-complexity vise (File 14); error-mitigation limits and the IBM utility case (File 10); D-Wave and other roadmaps (File 19); resource estimation showing useful applications need fault tolerance (File 18); analog simulation on atoms/ions (Files 4, 5); benchmarking and the checklist (File 22); market hype dynamics and enterprise pilots (File 24); quantum sensing as realized adjacent advantage (File 16).*
