@@ -170,3 +170,22 @@ The classical-simulation discipline is not academic nitpicking — it is essenti
 ### 20. Final summary
 
 Classical simulation of quantum circuits is central to quantum computing as both the moving-target benchmark every advantage claim must beat and the essential development/validation infrastructure the field relies on. The methods (state-vector, tensor-network, stabilizer, low-T-count, hybrid) reveal that classical hardness is governed by *entanglement, T-count, and depth* — not qubit count — and that a circuit is hard only if high in all three. The repeated classical catching-up (Google supremacy, IBM utility, and their rebuttals) establishes the moving-target principle: advantage claims are provisional, valid only against the best current classical method, and the low-complexity circuits NISQ hardware and error mitigation handle are often classically tractable too — so durable advantage likely requires fault tolerance to run the high-complexity, high-fidelity circuits classical methods cannot follow. The classical-comparison discipline (assess complexity, demand the best-run classical baseline, account for device fidelity, distinguish useful from contrived tasks, track rebuttals) is the essential skill for honest assessment and the field's credibility. This discipline is the throughline connecting classical simulation to the supremacy/utility debates (Files 1, 10), algorithm assessment and dequantization (Files 13, 25), application skepticism (File 17), and benchmarking rigor (File 22) — the honest evaluation of quantum computing's genuine, durable advantages versus its provisional and overstated claims.
+
+---
+
+## Appendix — Simulation Method Selection Guide
+
+| Circuit property | Best classical method | Practical reach |
+|---|---|---|
+| ≤~30 qubits, any structure | State-vector (Qiskit Aer, qsim) | Exact, workstation |
+| ≤~40–50 qubits, any structure | GPU/distributed state-vector (cuQuantum) | Exact, supercomputer |
+| Low entanglement (shallow/1D) | Tensor networks (MPS, quimb) | Hundreds of qubits |
+| 2D limited entanglement | PEPS / contraction (cuTensorNet) | Depends on entanglement |
+| Clifford-only | Stabilizer (Stim) | Thousands+ qubits, polynomial |
+| Low T-count | Stabilizer-rank methods | Poly in qubits, exp in T-count |
+| QEC circuits (mostly Clifford) | Stim + decoders | Thousands of qubits |
+| Deep random 2D (supremacy-style) | Hybrid / fidelity-matched sampling | The contested frontier |
+
+**Rule of thumb:** a circuit is classically *easy* if it is low in *any* of {entanglement, T-count, depth}, and classically *hard* only if high in *all three* (Section 15). To assess whether a quantum device beats classical methods on a given circuit, identify which axis the circuit is low in (if any), pick the method exploiting that axis, and run it — the naive worst-case (state-vector) estimate is almost always beatable by a structure-exploiting method, which is why supremacy claims based on naive classical estimates are repeatedly overturned (Section 8).
+
+**The one-sentence takeaway:** classical simulation is the moving-target benchmark and essential development infrastructure of quantum computing, governed by entanglement/T-count/depth (not qubit count), whose repeated catching-up (supremacy and utility rebuttals) proves that advantage claims are provisional and that durable quantum advantage — requiring high-complexity, high-fidelity circuits classical methods cannot cheaply follow — likely awaits fault tolerance, making the classical-comparison discipline (best-run baseline, complexity assessment, fidelity accounting, useful-task requirement) the essential skill for honest assessment of the field's genuine versus overstated advantages.
