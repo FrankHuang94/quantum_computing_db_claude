@@ -213,3 +213,23 @@ The recurring meta-lesson — stated here and reinforced throughout — is that 
 ---
 
 *Cross-references: complexity theory and algorithms (File 13); error correction and the threshold theorem (File 9); resource estimation translating algorithms to physical qubits (File 18); the honesty/due-diligence throughline (Files 10, 14, 17, 22); national programs and post-quantum cryptography (File 21).*
+
+---
+
+## Appendix — Navigating the Database
+
+This overview opens a 25-file database (plus the README index). The recurring throughline is **honest, technical, evidence-based assessment** — every advantage claim paired with its caveats, every roadmap with its track record, every headline number with its context. Three navigational notes:
+
+- **The physical-vs-logical distinction (§5.4) is the most important quantitative reality check** in the field, and it recurs throughout (Files 9, 18, 22): a machine's usefulness is set by its *logical* qubits and error rate, not its physical qubit count. A 1000-physical-qubit machine may host only a handful of logical qubits.
+- **The honesty/due-diligence files (10, 14, 17, 19, 22)** form a cross-cutting "skeptical" reading path (see README) — mitigation limits, classical simulation, NISQ applications, roadmap credibility, and benchmarking — that instills the disciplined evaluation of quantum-advantage claims the database models.
+- **Resource estimation (File 18)** is the quantitative capstone that composes the hardware (Files 3–7), error correction (File 9), algorithms (File 13), and infrastructure (File 11) into the concrete physical-qubit counts and timelines that define the path to utility — the honest answer to "what would it take, and when?"
+
+The synthesized view, developed across the files: quantum computing is a **real, transformative technology** with **proven but specific** exponential speedups and **validated below-threshold error correction**, whose **broadly-useful realization is plausibly a 2030s-and-beyond development** gated by interconnected research frontiers (File 25) — neither the imminent revolution of hype nor the impossibility of dismissal, but the disciplined, quantitatively-grounded middle. Proceed to File 02 for the formalism every later file assumes, or follow one of the README's role-specific reading paths.
+
+### Extended note: the arc from impossibility to demonstration
+
+The field's defining arc (developed in Files 1, 9) runs from Feynman's 1982 motivation and the 1994 objection that "decoherence makes quantum computing impossible" (Landauer and others), through the 1995–1998 discovery of quantum error correction and the threshold theorem (File 9) that refuted the impossibility, to the 2024 experimental demonstration of *below-threshold* error correction (Google Willow, File 9) that validated the threshold theorem in practice. This ~30-year arc — from "impossible" to "demonstrated" — is one of the great sustained research programs in physics and computer science, and it grounds the disciplined optimism the database models: the *principle* of fault tolerance is now experimentally validated (File 9), the *path* to useful machines is quantified (resource estimation, File 18), and the remaining work is *scaling and engineering* (the interconnected frontiers, File 25) over a long but bounded timeline (plausibly 2030s-and-beyond for broad utility, File 18). The arc also cautions against both extremes: the impossibility objection was *wrong* (error correction works), but the transformative applications remain *years away* (File 18) — so the honest posture credits the genuine, hard-won progress while maintaining realistic timeline expectations, the calibrated middle this database maintains from this overview through the frontiers of File 25.
+
+### One-line orientation
+
+Quantum computing offers proven-but-specific exponential speedups (factoring, simulation, File 13) for structured problems — not a general speedup — realized through the DiVincenzo criteria on competing hardware modalities (Files 3–7), protected by error correction (File 9), and quantified by resource estimation (File 18), with broadly-useful realization plausibly a 2030s-and-beyond development gated by interconnected frontiers (File 25) — the disciplined middle between hype and dismissal that this database maintains throughout.
