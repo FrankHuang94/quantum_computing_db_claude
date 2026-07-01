@@ -114,3 +114,72 @@ This application-direct, resource-estimation-grounded approach is the honest ben
 Quantum-computing benchmarking is unusually contested because, unlike classical computing's accepted standards (FLOPS, SPEC), it suffers from a proliferation of vendor-favorable metrics, genuine cross-architecture-comparison difficulty, and a gap between headline metrics and useful-algorithm performance. The metrics — raw qubit count (least informative, ignores fidelity/connectivity, ≠ logical qubits), Quantum Volume (integrates count/connectivity/fidelity but random-circuit-based and exponentially costly), Algorithmic Qubits and CLOPS (vendor-originated, favoring ions' and superconducting's respective strengths), randomized/cross-entropy benchmarking (architecture-neutral gate fidelities, the most apples-to-apples, but hiding error structure), and application-specific benchmarks (the most meaningful, measuring real-workload performance) — each capture *part* of the picture, but *no single number* adequately captures how good a quantum computer is for a specific purpose. Vendor-originated composite metrics should always be read with awareness that they favor the originating architecture (File 20), and the only fully reliable approach is to benchmark the user's *own* target application directly, grounded in the error-correction, mitigation, and resource-estimation frameworks (Files 9, 10, 18), treating composite vendor metrics as directional/marketing indicators rather than engineering-grade comparisons. This disciplined, application-direct, vendor-metric-skeptical benchmarking is essential to honest hardware assessment, and it is the throughline connecting this file to the classical-comparison discipline (File 14), the NISQ-application skepticism (File 17), the roadmap-credibility framework (File 19), and the competitive-landscape metric-shifting awareness (File 20) — together forming the database's coherent, evidence-based approach to assessing quantum-computing claims.
 
 *Cross-references: RB/XEB and the coherent/stochastic error distinction (File 2); modality gate fidelities and specs (Files 3–7); physical vs. logical qubits (Files 1, 9); logical error rate as the fault-tolerant metric (Files 9, 18); resource estimation for application-feasibility assessment (File 18); vendor metric-shifting and competitive positioning (File 20); roadmap credibility and independent benchmarking (File 19); the classical-comparison discipline and advantage claims (Files 14, 17); enterprise application-benchmarking (File 24).*
+
+---
+
+## Part IV — Deeper Topics, Worked Examples, and Glossary
+
+### 11. Calibration drift and reproducibility
+
+A practical benchmarking complication (Files 3, 8): quantum-device performance *drifts over time* (calibration drift from TLS spectral diffusion, flux drift, temperature, File 3). Consequences for benchmarking:
+
+- **Time-dependence:** a device's benchmark score (QV, fidelity) can vary day-to-day, so a single measurement is a *snapshot*, not a fixed property.
+- **Reproducibility challenge:** reproducing a benchmark requires the *same calibration state*, which is hard — undermining cross-time and cross-lab comparison.
+- **Cherry-picking risk:** a vendor could report a *best-case* benchmark from a favorable calibration, not the typical performance — a reason to prefer *distributions* (typical and worst-case) over single best-case numbers, and to weight *independent* measurement (Section 7; File 19).
+
+Calibration drift makes quantum benchmarking a *moving target even for a single device*, and honest benchmarking reports the *distribution* of performance (not just the best), uses consistent methodology, and favors independent verification (File 19). This time-dependence is a distinctive challenge versus classical benchmarking (where hardware performance is stable).
+
+### 12. Worked example: qubit count vs. usefulness
+
+Concretely illustrate why raw count misleads (Section 1). Compare two hypothetical devices:
+
+- **Device A:** 1000 physical qubits, 99.0% two-qubit fidelity, nearest-neighbor connectivity (degree 4).
+- **Device B:** 50 physical qubits, 99.9% two-qubit fidelity, all-to-all connectivity.
+
+For a structured algorithm requiring long-range interactions (e.g., a chemistry ansatz), Device B may *outperform* Device A: B's all-to-all connectivity avoids the SWAP overhead (File 8) that inflates A's effective gate count, and B's 10× better fidelity means far lower accumulated error. A's 20× larger qubit count is *irrelevant* if the algorithm fits in 50 qubits and A's connectivity/fidelity cripple it. This worked example (echoing File 3, Appendix B) demonstrates why raw count is the most misleading metric in isolation — usefulness depends on the *joint* fidelity-connectivity-count picture (which QV partly captures, Section 2), and on the *specific algorithm* (which only application benchmarks capture, Section 6). It is the quantitative case for the "no single number" meta-point (Section 8).
+
+### 13. Worked example: reading a benchmark claim
+
+Apply the benchmarking skepticism (Sections 7–9) to a hypothetical: *"Our device achieved Quantum Volume 2²⁰, the highest ever."* Assessment:
+
+1. **What does QV measure?** Count × connectivity × fidelity on *random* circuits (Section 2) — a real composite, but random-circuit-based.
+2. **Whose metric?** QV is IBM-originated but favors *connectivity* (where ions excel) — so a trapped-ion device (Quantinuum) posting high QV reflects its connectivity/fidelity advantage (Section 2).
+3. **Does it predict my application?** Not directly — QV uses random circuits, not the user's structured algorithm (Section 8).
+4. **Independently verified?** Was it independently measured, and is it typical or best-case (Section 11)?
+5. **What matters for me?** For the user's specific application, run *that* application (Section 9), not trust QV.
+
+Verdict: a high QV is a *genuine positive signal* (good count/connectivity/fidelity) but *not* a guarantee of application performance, and it should be read as a directional indicator, verified independently, and supplemented by application-direct benchmarking (Section 9). This worked assessment is the practical skill for reading any benchmark claim — understand what it measures, whose metric it is, whether it predicts the user's application, and whether it's independently verified.
+
+### 14. The evolution of benchmarking
+
+Quantum benchmarking has *evolved* alongside the hardware:
+
+- **Early (pre-2019):** raw qubit count dominated (Section 1) — the "qubit race" era, misleading in isolation.
+- **2019–2022:** composite metrics emerged (Quantum Volume 2019, #AQ, CLOPS) to address raw-count's blindness — but each vendor-favorable (Section 7).
+- **2023–present:** the shift toward *logical* metrics (logical qubit count, logical error rate, Files 9, 18) as the field entered the error-correction era (File 9), and toward *application benchmarks* (Section 6) measuring real-workload performance. The "quality over quantity" reframing (File 19) is a benchmarking reframing as much as a roadmap one.
+
+The evolution — from raw count to composite metrics to logical/application benchmarks — reflects the field's maturation (Files 9, 19) and its growing recognition that meaningful benchmarking must capture *usefulness* (logical qubits, application performance), not just raw scale. The current best practice (logical metrics + application benchmarks) is the most honest, and the trajectory is toward increasingly meaningful (if harder-to-measure) benchmarks.
+
+### 15. Logical-qubit benchmarking (the fault-tolerant frontier)
+
+As the field enters fault tolerance (File 9), the meaningful metrics shift to the *logical* level:
+
+- **Logical qubit count:** how many error-corrected logical qubits (Files 9, 18) — far more meaningful than physical count (Section 1).
+- **Logical error rate:** the error rate *per logical operation* (File 9) — the key fault-tolerant quality metric, and what below-threshold demonstrations (File 9) measure.
+- **Below-threshold scaling (Λ):** whether increasing code distance *reduces* logical error (File 9, the Google Willow demonstration) — the crucial fault-tolerance-viability signal.
+
+These logical metrics (File 9, 18) are the *right* metrics for the fault-tolerant era, and the field's 2023–2024 reframing (File 19) toward them is the correct maturation. An analyst assessing fault-tolerant progress should track *logical* qubit count, *logical* error rate, and *below-threshold scaling* (File 9) — not physical qubit count — as the meaningful benchmarks.
+
+### 16. Glossary and summary
+
+- **Raw qubit count:** physical qubits; least informative in isolation (ignores fidelity/connectivity, ≠ logical qubits).
+- **Quantum Volume (QV):** IBM composite integrating count × connectivity × fidelity on random circuits; ions post highest.
+- **#AQ (Algorithmic Qubits):** IonQ composite emphasizing useful circuits; favors ion strengths.
+- **CLOPS:** IBM throughput metric; favors superconducting speed.
+- **RB/XEB:** architecture-neutral gate/circuit fidelity protocols; most apples-to-apples but hide error structure.
+- **Application benchmarks:** real-workload performance across vendors; most meaningful.
+- **Logical qubit count / logical error rate / Λ:** the fault-tolerant-era metrics (File 9).
+- **Calibration drift:** time-dependence of device performance, complicating reproducibility.
+- **The meta-lesson:** no single number captures usefulness; vendor metrics favor their originators; benchmark your own application.
+
+**Summary.** Quantum-computing benchmarking is contested because no accepted standards exist, cross-architecture comparison is genuinely hard, and headline metrics often don't predict useful performance. Raw qubit count is least informative (ignores fidelity/connectivity, ≠ logical qubits); Quantum Volume integrates count/connectivity/fidelity but is random-circuit-based; #AQ and CLOPS are vendor-originated (favoring ions and superconducting respectively); RB/XEB give architecture-neutral gate fidelities (most apples-to-apples, but hide error structure); and application benchmarks measure real-workload performance (most meaningful). No single number captures how good a quantum computer is for a specific purpose (usefulness is multidimensional), vendor composite metrics favor their originators, and calibration drift makes even single-device benchmarks time-dependent — so the only reliable approach is to benchmark the user's *own* application directly, grounded in resource estimation (File 18) and logical metrics (File 9), treating vendor composites as directional indicators verified independently. The field's evolution from raw count to composite metrics to logical/application benchmarks reflects its maturation, and the fault-tolerant era's logical metrics (logical qubit count, logical error rate, below-threshold scaling, File 9) are the right ones going forward. This disciplined, application-direct, vendor-metric-skeptical benchmarking is the throughline connecting this file to the classical-comparison discipline (File 14), NISQ-application skepticism (File 17), roadmap credibility (File 19), and competitive metric-shifting awareness (File 20).
