@@ -164,3 +164,44 @@ Quantum-computing investment is thus a *long-horizon, binary-risk, capital-inten
 - **PQC-migration economy:** the (classical) cryptography-migration spending, arguably the largest quantum-adjacent economic activity.
 - **Hype cycle:** the recurring enthusiasm-disillusionment pattern the disciplined analyst resists.
 - **Quantum-adjacent:** sensing (File 16), PQC (File 21), services — distinct from core quantum-computing revenue.
+
+---
+
+## Part V — Investment Assessment, Reader's Guide, and Summary
+
+### 15. Assessing the investment case honestly
+
+For readers using this database for investment-research context (with the standard *not-investment-advice* caveat), the honest investment assessment (File 20) grapples with:
+
+- **The pre-revenue reality** (Section 5) — the sector is not yet a commercial business at scale.
+- **The long timeline** (File 18) — useful fault tolerance is plausibly 2030s+, a long horizon for returns.
+- **The modality uncertainty** (File 18) — which approach wins is unknown, so single-company bets carry modality risk.
+- **The high volatility** (Section 6) — sentiment-driven, decoupled from milestones.
+- **The concentration of value** in well-capitalized players (giants, Quantinuum, PsiQuantum, File 20) vs. higher-risk smaller players.
+- **The hedged options** — platforms (Microsoft, AWS) and picks-and-shovels (Q-CTRL, Riverlane, File 20) benefit regardless of modality.
+
+The disciplined investment view: the *technology* is real and progressing (File 9), but the *commercial timeline* is long and uncertain, the *public-market dynamics* are volatile, and the *modality outcome* is unresolved — a high-risk, long-horizon, patient-capital sector requiring careful, risk-aware, long-horizon assessment (File 20). This structural characterization (not advice) frames the investment profile honestly.
+
+### 16. The technology-vs-business timeline mismatch
+
+The defining business insight (File 20): *the technology and the business are on different timelines*. The *technology* is progressing genuinely and measurably (below-threshold error correction, dozens of logical qubits, File 9). The *business* is pre-revenue at scale (Section 5), competing for position ahead of a future market whose arrival (File 18) is uncertain, amid volatility and hype cycles. This mismatch — real technical progress, long uncertain commercial timeline — is the essential business calibration, and it explains the sector's dynamics: valuations pricing future potential (Section 5), volatility from the timeline gap (Section 6), hype cycles from the mismatch (Section 10), and consolidation as capital tests the long path (File 20). Holding both truths — real progress *and* long timeline — is the disciplined business assessment.
+
+### 17. Reader's guide to business assessment
+
+For an analyst assessing the quantum-computing business/market:
+
+1. **Distinguish core computing from quantum-adjacent** (Section 12) — core computing is small/pre-revenue; sensing (File 16) and PQC (File 21) are larger but distinct.
+2. **Treat market forecasts skeptically** (Section 1) — order-of-magnitude variance, historical overoptimism; understand *why* they vary.
+3. **Apply the revenue-reality caveat** (Section 5) — the sector is pre-revenue at scale; discount production-deployment framing.
+4. **Recognize the hype cycle** (Section 10) — credit real progress, discount overstated advantage/timeline claims.
+5. **Assess funding resilience** (Section 3) — corporate/government-backed players are more stable than VC/public pure-plays.
+6. **Note the PQC economy** (Section 9) — the largest current quantum-adjacent activity, a rational insurance response (Section 11).
+7. **Calibrate the investment profile** (Section 13) — long-horizon, binary-risk, like biotech/fusion, not near-term-revenue AI.
+
+Applying this guide grounds business assessment in evidence and honest calibration, resisting both hype and dismissal — the disciplined approach the database maintains, and the business-dimension counterpart to the algorithm (File 13), NISQ-application (File 17), roadmap (File 19), and benchmarking (File 22) frameworks.
+
+### 18. Summary
+
+The business and investment dimension of quantum computing is defined by a *mismatch between long-horizon technology and short-horizon markets*: the technology is progressing genuinely (File 9), but the sector is *pre-revenue at scale* (most "revenue" is R&D/government/pilot, not production), with market forecasts varying by an order of magnitude (reflecting timeline, application, and definitional uncertainty) and historically proving overoptimistic. Funding comes from private VC (sentiment-sensitive), corporate R&D (stable), government (growing, sometimes dominant), and public markets (the volatile 2021–2022 SPAC wave and its dilution-pressured aftermath). Enterprise engagement is dominated by R&D exploration and pilots (capability-building, hedging), not production deployment — with D-Wave's contested-advantage annealing customers the closest to production. The talent market is scarce, concentrated, and AI/ML-competitive, with a maturing degree-program pipeline. Crucially, the *post-quantum-cryptography migration* (File 21) — a classical-cryptography response to the anticipated quantum threat, driven by the HNDL risk — is arguably the *largest current quantum-adjacent economic activity*, a rational insurance response paid now against a future-but-present-consequence risk, and an essential distinction for market sizing (core quantum-computing revenue is small; quantum-adjacent activity including sensing and PQC is larger but distinct). The sector's hype cycles (recurring enthusiasm-disillusionment) demand evidence-based assessment, and its investment profile (long-horizon, binary-risk, capital-intensive, like biotech/fusion) requires patient, risk-tolerant, well-calibrated capital. The disciplined business assessment — disaggregating core from adjacent, treating forecasts skeptically, applying the revenue-reality caveat, recognizing the hype cycle, and holding both the real technical progress and the long uncertain commercial timeline in view — is the honest calibration this file contributes, completing the commercial and financial picture of a transformative technology whose physics, hardware, algorithms, and resources the database's technical files develop, and whose long, uncertain, but real path from laboratory to industry the strategic files (Files 19, 20, 21, 25) together document.
+
+*Cross-references: NISQ-application commercial reality and the hype cycle (File 17); the long fault-tolerance timeline (File 18); the vendor landscape, revenue reality, SPAC dynamics, and talent (File 20); PQC migration and national programs (File 21); quantum sensing as a mature adjacent market (File 16); D-Wave annealing customers (File 17); the classical-comparison and benchmarking discipline underlying honest assessment (Files 14, 22); roadmap credibility (File 19).*
