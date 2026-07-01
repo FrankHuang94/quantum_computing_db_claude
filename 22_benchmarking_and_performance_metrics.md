@@ -183,3 +183,46 @@ These logical metrics (File 9, 18) are the *right* metrics for the fault-toleran
 - **The meta-lesson:** no single number captures usefulness; vendor metrics favor their originators; benchmark your own application.
 
 **Summary.** Quantum-computing benchmarking is contested because no accepted standards exist, cross-architecture comparison is genuinely hard, and headline metrics often don't predict useful performance. Raw qubit count is least informative (ignores fidelity/connectivity, ≠ logical qubits); Quantum Volume integrates count/connectivity/fidelity but is random-circuit-based; #AQ and CLOPS are vendor-originated (favoring ions and superconducting respectively); RB/XEB give architecture-neutral gate fidelities (most apples-to-apples, but hide error structure); and application benchmarks measure real-workload performance (most meaningful). No single number captures how good a quantum computer is for a specific purpose (usefulness is multidimensional), vendor composite metrics favor their originators, and calibration drift makes even single-device benchmarks time-dependent — so the only reliable approach is to benchmark the user's *own* application directly, grounded in resource estimation (File 18) and logical metrics (File 9), treating vendor composites as directional indicators verified independently. The field's evolution from raw count to composite metrics to logical/application benchmarks reflects its maturation, and the fault-tolerant era's logical metrics (logical qubit count, logical error rate, below-threshold scaling, File 9) are the right ones going forward. This disciplined, application-direct, vendor-metric-skeptical benchmarking is the throughline connecting this file to the classical-comparison discipline (File 14), NISQ-application skepticism (File 17), roadmap credibility (File 19), and competitive metric-shifting awareness (File 20).
+
+---
+
+## Part V — Cross-Paradigm Benchmarking and Reader's Guide
+
+### 17. Benchmarking annealers and non-gate-model machines
+
+Benchmarking gets *harder* across *paradigms* (Files 2, 17): comparing a gate-model quantum computer to a **quantum annealer** (D-Wave, File 17) is especially fraught, because:
+
+- **Different operations:** annealers don't run gate circuits — they evolve toward an Ising ground state (File 2, Section 38) — so gate-model metrics (QV, #AQ) don't apply.
+- **Contested advantage:** annealer benchmarking (File 17) is dominated by the *advantage* question — does the annealer beat classical simulated annealing / specialized solvers on the *same* optimization problem? — which is contested (File 17).
+- **Problem-embedding overhead:** annealers require *embedding* the problem onto their fixed connectivity graph (Pegasus/Zephyr, File 17), which reduces the effective problem size and complicates comparison.
+
+Cross-paradigm benchmarking (gate-model vs. annealing) requires *problem-specific* comparison (run the same optimization problem on both and on classical methods, File 14, 17) — there is no common composite metric. This reinforces the "no single number" meta-point (Section 8) at the paradigm level: even *within* quantum computing, different paradigms resist common benchmarks, and honest comparison is application-specific (Section 9).
+
+### 18. Benchmarking quantum networks and sensors
+
+Benchmarking extends to quantum *networking* (File 15) and *sensing* (File 16), with their own metrics:
+
+- **Networking (File 15):** entanglement-distribution rate, fidelity, distance; QKD key rate and secure distance — metrics specific to communication tasks.
+- **Sensing (File 16):** sensitivity (e.g., T/√Hz for magnetometers), fractional frequency uncertainty (clocks), spatial resolution — metrics specific to measurement tasks, where quantum sensing has *realized* advantage (File 16).
+
+These adjacent-technology benchmarks (networking, sensing) are more *mature* and *task-specific* than computing benchmarks, reflecting those fields' greater maturity (Files 15, 16). They illustrate that benchmarking is *task-specific* across quantum technologies — computing, networking, and sensing each have their own meaningful metrics, and no universal "quantum benchmark" spans them.
+
+### 19. Reader's guide to benchmarks
+
+For an analyst or engineer encountering any quantum benchmark:
+
+1. **Identify what the metric measures** (count, composite, gate fidelity, application) and its blind spots (Sections 1–6).
+2. **Ask whose metric it is** and which architecture it favors (Section 7).
+3. **Check if it predicts your application** — composite metrics rarely do; run your own workload (Section 9).
+4. **Verify independently** and check typical vs. best-case (calibration drift, Section 11).
+5. **For fault tolerance, use logical metrics** (logical qubit count, logical error rate, Λ, File 9) — not physical count.
+6. **For cross-paradigm/cross-technology comparison, use task-specific benchmarks** (Sections 17–18).
+7. **Treat composite vendor metrics as directional indicators**, not engineering-grade comparisons (Section 8).
+
+Applying this guide — identify the metric, note its bias, check application-relevance, verify independently, use logical metrics for fault tolerance, task-specific for cross-paradigm, and treat composites as directional — is the practical benchmarking skill. It equips the reader to cut through the contested benchmarking landscape and assess quantum-hardware capability honestly, the disciplined approach the database maintains.
+
+### 20. Final takeaway
+
+Quantum-computing benchmarking is a domain where marketing and engineering reality frequently diverge, and the disciplined analyst's essential skill is *skepticism toward single numbers*. No metric — raw count, Quantum Volume, #AQ, CLOPS, or even RB/XEB fidelity — fully captures how good a quantum computer is for a specific purpose, because usefulness is multidimensional (count, fidelity, connectivity, coherence, speed, error structure, and logical qubits/error rate for fault tolerance) and application-dependent. Vendor-originated composite metrics favor their originators' architectures (#AQ favors ions, CLOPS favors superconducting, QV favors connectivity), calibration drift makes even single-device benchmarks time-dependent, and cross-paradigm comparison (gate-model vs. annealing) resists common metrics. The only fully reliable approach is to benchmark the user's *own* target application directly, grounded in resource estimation (File 18) and — for fault tolerance — logical metrics (File 9), treating vendor composites as directional indicators to be verified independently. The field's evolution toward logical and application benchmarks (Files 9, 19) is the correct maturation, and the fault-tolerant-era metrics (logical qubit count, logical error rate, below-threshold scaling, File 9) are the meaningful ones going forward. This benchmarking skepticism — no single number, vendor metrics favor originators, benchmark your own application — is a core "honesty/due-diligence" discipline (alongside Files 14, 17, 19) essential to assessing quantum computing's genuine capabilities amid its pervasive marketing, and it is the analytical tool that turns contested benchmarks into honest hardware assessment.
+
+*Cross-references: RB/XEB and error structure (File 2); modality specs and fidelities (Files 3–7); physical vs. logical qubits and logical metrics (Files 1, 9); resource estimation for application-feasibility (File 18); vendor metric-shifting (File 20); roadmap credibility and independent benchmarking (File 19); classical-comparison discipline (File 14); annealing benchmarking (File 17); networking and sensing benchmarks (Files 15, 16); enterprise application-benchmarking (File 24).*
