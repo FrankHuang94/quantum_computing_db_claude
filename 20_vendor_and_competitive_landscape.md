@@ -730,3 +730,18 @@ Integrating these layers — technology, business, strategy, timeline, and risk 
 ### 71. The competitive landscape's ultimate lesson
 
 The ultimate lesson of the competitive landscape is that *the technology and the business are on different timelines*. The *technology* is progressing genuinely and measurably (below-threshold error correction, dozens of logical qubits, File 9) — real, peer-reviewed, accelerating progress. The *business* is pre-revenue at scale, competing for position ahead of a future market whose arrival (File 18) and winning modality remain uncertain, amid volatility, consolidation, and hype cycles (File 24). Holding both truths — real technical progress *and* long uncertain commercial timeline — is the essential calibration for the competitive landscape, and it mirrors the database's central theme: quantum computing is a genuine, transformative technology whose *proven* potential (Files 9, 13, 18) is real but whose *commercial realization* is a long, uncertain, hard-but-not-impossible journey (Files 18, 24). The vendor landscape is where this journey plays out commercially, and assessing it honestly — crediting real progress, discounting hype, tracking the modality race (File 18) and the demonstrated results (File 9, 19), and applying the integrated analyst's framework (Section 70) — is the disciplined approach that separates informed assessment from both the boom-bust hype cycles and the reflexive dismissal that have characterized much of the sector's public perception. The competitive landscape, honestly assessed, is a map of ambition and uncertainty in service of a transformative technology whose time — the resource estimates and roadmaps suggest (Files 18, 19) — is coming, but is not yet here.
+
+### 72. A final competitive-landscape reference
+
+For quick reference, the sector's competitive logic reduces to a few durable principles:
+
+- **The winner depends on the modality race** (File 18) — no company can be assessed apart from its modality's fault-tolerant prospects.
+- **Demonstrated results beat roadmaps** (File 19) — credit peer-reviewed, benchmarked achievements; discount projections.
+- **The sector is pre-revenue at scale** (File 24) — competition is for position, not current large revenue.
+- **The most durable moats are ecosystem/software and capital** (Section 56) — not the erodible technical lead.
+- **Platforms and picks-and-shovels are hedged** (Sections 40, 56) — they win regardless of the modality outcome.
+- **Consolidation is coming** (Sections 30, 57) — the well-capitalized survive; the under-capitalized are targets.
+- **Geopolitics overlays commerce** (File 21) — national champions, government funding, export controls shape the market.
+- **Technology and business are on different timelines** (Section 71) — real technical progress, long uncertain commercial timeline.
+
+These principles, applied via the integrated analyst's framework (Section 70) and the competitive-assessment checklist (Section 46), equip an analyst to navigate the quantum-computing vendor landscape with the disciplined, evidence-based, honestly-uncertain approach the database maintains throughout — completing the commercial picture of the transformative technology whose physics, hardware, algorithms, error correction, and resource requirements the database's technical files develop, and whose roadmaps, geopolitics, market, and frontiers the remaining strategic files (Files 19, 21, 24, 25) complete.
