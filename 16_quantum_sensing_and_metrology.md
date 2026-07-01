@@ -135,3 +135,49 @@ Quantum sensing grounds the database's assessment of quantum computing in three 
 3. **It clarifies computing's remaining challenge** — sensing succeeds with the *easy* part of quantum control (single-/few-system coherence and precision), while computing needs the *hard* part (scalable error-corrected many-qubit control, Files 9, 11, 18). So computing's challenge is specifically *scaling and error correction*, not quantum control per se — a precise diagnosis of what remains.
 
 When assessing "quantum technology" claims (File 24), distinguish sensing (mature, deployed, real advantage) from computing (pre-revenue, contested near-term advantage, awaiting fault tolerance) — they share physics but differ fundamentally in maturity and difficulty. Quantum sensing is a real, commercial, revenue-generating quantum industry that exploits coherence for precision measurement; quantum computing is a longer-term prospect requiring the far-harder achievement of scalable error correction. Holding this distinction — and drawing on sensing's demonstrated advantage, validated technology, and precise diagnosis of computing's remaining challenge — is the calibration this file contributes to the honest assessment of quantum computing's trajectory that the database models throughout (Files 17, 18, 19, 24).
+
+---
+
+## Part VII — History, Additional Applications, and Glossary
+
+### 13. Historical arc of quantum metrology
+
+Quantum metrology predates and parallels quantum computing:
+
+- **1960s–1980s:** SQUIDs developed (Josephson junction discovered 1962), becoming the gold standard for magnetic sensing; atomic (cesium microwave) clocks defined the SI second (1967).
+- **1990s–2000s:** laser cooling (Nobel 1997) enabled cold-atom sensors and interferometry; the first optical-frequency-comb-based optical clocks emerged (Nobel 2005 for frequency combs).
+- **2000s–2010s:** NV-center sensing developed into a room-temperature quantum-sensing platform; optical lattice clocks surpassed cesium, reaching 10⁻¹⁸ uncertainty.
+- **2015:** squeezed light deployed in **LIGO** gravitational-wave detectors (reducing quantum noise below the shot-noise limit — a landmark deployed use of quantum-enhanced metrology).
+- **2010s–2020s:** commercial quantum sensors (gravimeters, magnetometers, clocks) reach the market; defense programs fund quantum inertial navigation.
+
+This decades-long maturation — well ahead of quantum computing — reflects sensing's fundamentally easier requirements (Section 5) and establishes quantum metrology as a proven, deployed technology. The history also shows the *same* enabling advances (laser cooling, frequency combs, coherent control) underpinning both sensing (mature) and computing (emerging) — reinforcing the shared technology base.
+
+### 14. Additional and emerging applications
+
+- **Gravitational-wave detection:** LIGO/Virgo use squeezed light (quantum-enhanced interferometry) to reduce quantum noise, extending their detection range — a deployed, high-impact quantum-metrology application enabling astrophysics.
+- **Dark-matter searches:** quantum sensors (clocks, magnetometers, and specialized detectors) search for ultralight dark matter and other beyond-Standard-Model physics, exploiting their extreme precision to detect tiny anomalous signals.
+- **Medical imaging:** optically-pumped magnetometers (atomic magnetometers, an alternative to SQUIDs not requiring cryogenics) enable wearable magnetoencephalography (MEG) — brain imaging with room-temperature quantum sensors, a growing commercial area (companies like Cerca Magnetics, QuSpin).
+- **Quantum radar / imaging:** proposed (and contested) quantum-enhanced radar and imaging using entangled or squeezed light — more speculative, with debated practical advantage (a sensing analogue of computing's contested claims).
+- **Timing for finance and telecom:** ultra-precise timing (from atomic clocks) for financial-transaction timestamping, telecom synchronization, and GPS backup.
+
+These applications span deployed (LIGO, MEG, timing), emerging (wearable MEG, dark-matter searches), and speculative (quantum radar) — a maturity spectrum within sensing itself, with the deployed applications demonstrating genuine realized quantum advantage.
+
+### 15. The atomic magnetometer alternative to SQUIDs
+
+A notable development: **optically-pumped atomic magnetometers** (using laser-probed alkali-atom vapor cells, sharing atomic-physics technology with atom-based computing/clocks) rival SQUID sensitivity *without cryogenics* — enabling *wearable*, room-temperature MEG (brain imaging) that traditional cryogenic SQUID-MEG cannot. This is a case where one quantum-sensing technology (atomic magnetometers) displaces another (SQUIDs) by removing the cryogenic requirement — analogous to how, in computing, room-temperature modalities (ions, atoms) avoid the cryogenics of superconducting qubits. It illustrates that within quantum sensing, as in computing, the *practical* winner often depends on operating requirements (cryogenic vs. room-temperature) as much as raw performance — and it is a growing commercial success (wearable brain-imaging systems).
+
+### 16. Glossary
+
+- **Optical atomic clock:** the most precise instrument (<10⁻¹⁸ fractional uncertainty); shares ion/atom technology with computing.
+- **NV center:** room-temperature diamond spin sensor for nanoscale magnetometry.
+- **SQUID:** superconducting (Josephson) magnetometer; extreme sensitivity, cryogenic.
+- **Atomic magnetometer:** room-temperature alkali-vapor magnetometer, a SQUID alternative (wearable MEG).
+- **Atom interferometry:** cold-atom matter-wave sensing for gravimetry/inertial navigation.
+- **Standard quantum limit (SQL) / Heisenberg limit:** 1/√N (independent probes) vs. 1/N (entangled probes) precision scaling.
+- **Spin squeezing:** entangled states reducing measurement noise below the SQL.
+- **Relativistic geodesy:** measuring gravitational potential (height) via clock-rate comparison.
+- **Ramsey interferometry:** the shared measurement protocol (also used in computing coherence measurement).
+
+### 17. Final note
+
+Quantum sensing and metrology are the mature, commercial, revenue-generating face of quantum technology — atomic clocks, NV magnetometers, gravimeters, SQUIDs, and atomic magnetometers delivering realized quantum advantage today, sharing physics and control technology with quantum computing but requiring only the easy part of quantum control (coherent single-/few-system precision) rather than computing's hard part (scalable error correction). This maturity difference is fundamental, not incidental, and it provides three calibrations for assessing quantum computing: sensing shows realized quantum advantage is possible (validating the field's premise), it validates the shared control technology (partly de-risking computing modalities), and it precisely diagnoses computing's remaining challenge as scaling and error correction (Files 9, 11, 18) rather than quantum control per se. When evaluating "quantum technology" claims and markets (File 24), the sensing-vs-computing distinction — mature/deployed vs. pre-revenue/emerging — is essential, and it is a calibration this file contributes to the whole database's honest, grounded assessment of where quantum technologies stand and where quantum computing, specifically, must still go.
