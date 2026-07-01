@@ -13,8 +13,8 @@ Target: >= 100,000 words total; primary files (02,03,04,05,09,11,12,13,18,20,25)
 - [x] 07_other_qubit_modalities.md (4,600+ w)
 - [x] 08_quantum_gates_circuits_and_compilation.md (~4,000 w)
 - [x] 09_quantum_error_correction.md (PRIMARY, 12,000+ w)
-- [ ] 10_quantum_error_mitigation.md
-- [ ] 11_control_electronics_and_cryogenics.md (PRIMARY)
+- [x] 10_quantum_error_mitigation.md (~3,900 w)
+- [x] 11_control_electronics_and_cryogenics.md (PRIMARY, 12,000+ w)
 - [ ] 12_quantum_software_stack_and_compilers.md (PRIMARY)
 - [ ] 13_quantum_algorithms_deep_dive.md (PRIMARY)
 - [ ] 14_classical_simulation_of_quantum_circuits.md
@@ -39,3 +39,4 @@ Target: >= 100,000 words total; primary files (02,03,04,05,09,11,12,13,18,20,25)
 - 2026-07-01: FILE 05 committed (PRIMARY, >12,000 w). Total ~51k words (files 01-05).
 - 2026-07-01: FILES 06, 07 committed (standard). Running total ~65k words.
 - 2026-07-01: FILES 08, 09 committed. FILE 09 PRIMARY >12,000 w. Running total ~90k words (files 01-09).
+- 2026-07-01: FILES 10, 11 committed. FILE 11 PRIMARY >12,000 w.
