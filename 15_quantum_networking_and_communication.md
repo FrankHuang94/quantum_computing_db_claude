@@ -167,3 +167,43 @@ Contrast the Micius satellite (Section 7) with fiber. A satellite at ~500 km alt
 - **Networked quantum sensing:** entanglement-enhanced distributed sensing (File 16).
 
 **Summary.** Quantum networking distributes quantum information (entanglement) between separated nodes for secure communication, distributed computing, and networked sensing, founded on photonic transmission and the photon–matter interface. QKD (BB84/E91 and variants) delivers physics-based secure key distribution — deployable now over fiber (~100s km) and satellite (Micius, >1000 km) but a niche complement to mainstream post-quantum cryptography (File 21). Quantum repeaters extend entanglement via swapping (circumventing no-cloning's ban on amplification), gated by the unsolved quantum-memory challenge and progressing through generations toward error-corrected, memory-less designs that blur into fault-tolerant photonics — making a full quantum internet a multi-decade effort. Distributed quantum computing links processors via photonic interconnects (a key modular-scaling strategy, Files 4, 6, 11), sharing technology and challenges with repeaters and, for superconducting qubits, requiring hard microwave-to-optical transduction. The exponential fiber loss (worked example, Section 15) makes long-distance quantum communication fundamentally hard, driving the repeater and satellite approaches. Quantum networking is both a field in its own right and an enabler of modular quantum computing, with quantum memory and high-rate interconnects as its defining, largely-unsolved frontiers — and with deep, strategically-important synergy with photonic computing (File 6) and quantum sensing (File 16).
+
+---
+
+## Part VI — The Quantum Internet Stack, Applications, and Reader's Takeaway
+
+### 18. A layered quantum-internet stack
+
+Analogous to the classical internet's layered architecture, researchers (notably the QuTech group) have proposed a **quantum-network stack** with layers of increasing capability (a roadmap for the quantum internet's development):
+
+1. **Trusted-repeater networks:** the simplest — intermediate nodes are *trusted* (they decrypt and re-encrypt), providing QKD over long distances *without* genuine end-to-end quantum security (China's backbone QKD network operates this way). Deployable now, but the trust assumption is a weakness.
+2. **Prepare-and-measure networks:** end-to-end QKD without trusted intermediate nodes — requiring point-to-point quantum links.
+3. **Entanglement-distribution networks:** distributing raw entanglement end-to-end (via repeaters) — enabling device-independent QKD and more.
+4. **Quantum-memory networks:** with quantum memories at nodes, enabling more complex protocols (some distributed computing).
+5. **Fault-tolerant few-qubit networks and beyond:** full distributed quantum computing and networked applications.
+
+The current state is stages 1–2 (deployed QKD, some entanglement distribution); the higher stages await mature repeaters and memories (Sections 6, 8). This staged roadmap, like the fault-tolerant-computing roadmap (File 19), provides a realistic framing: incremental capability growth over decades, not a sudden "quantum internet" arrival. It also clarifies that today's deployed "quantum networks" (trusted-repeater QKD backbones) are far from the full end-to-end-entanglement vision — an important honest calibration against overstated "quantum internet exists now" claims.
+
+### 19. Applications of a mature quantum network
+
+Beyond QKD, a mature quantum internet would enable:
+
+- **Distributed quantum computing** (Section 10) — modular scaling and cloud quantum computing with genuine end-to-end quantum security.
+- **Networked quantum sensing** (Section 11; File 16) — entanglement-enhanced distributed metrology (comparing distant clocks for geodesy/fundamental physics, distributed telescopes, field mapping).
+- **Blind quantum computing** — a client with limited quantum capability delegating a computation to a quantum server *without revealing* the computation (privacy-preserving quantum cloud computing), enabled by quantum-network protocols.
+- **Distributed consensus and other quantum-network protocols** — Byzantine agreement, secret sharing, and other multi-party protocols with quantum advantages.
+- **Fundamental science** — long-baseline entanglement for tests of quantum mechanics, relativity, and gravity.
+
+These applications, mostly long-horizon (awaiting mature repeaters/memories), define the quantum internet's eventual value proposition — but honest assessment (Section 8) places broad deployment in the 2030s-and-beyond, with QKD and small testbeds the near-term reality. Blind quantum computing and networked sensing are among the more concretely-motivated near-to-medium-term applications.
+
+### 20. Reader's takeaway for File 15
+
+When assessing quantum-networking claims, distinguish carefully:
+
+- **QKD vs. PQC** (Section 4): QKD is physics-based key distribution (niche, hardware-heavy, distance-limited); PQC is the mainstream software response to the quantum threat (File 21). Don't conflate them.
+- **Trusted-repeater vs. end-to-end-quantum networks** (Section 18): deployed "quantum networks" (China's backbone) are often trusted-repeater QKD, *not* the full end-to-end-entanglement quantum internet — a significant distinction obscured in headlines.
+- **Demonstrations vs. scalable infrastructure** (Sections 7–8): entanglement-distribution demonstrations (Micius, metro testbeds) are proof-of-principle; scalable repeater chains await the quantum-memory breakthrough.
+- **The quantum-memory bottleneck** (Section 6): the make-or-break challenge for repeaters and hence for the quantum internet — track memory progress (coherence, fidelity, efficiency) as the key indicator.
+- **Networking ↔ computing synergy** (Sections 9–10): quantum networking and modular quantum computing share technology (photonic interconnects, transduction) and challenges; progress in one aids the other.
+
+This disciplined framing — distinguishing QKD from PQC, trusted from end-to-end networks, demonstrations from infrastructure, and tracking the quantum-memory bottleneck — separates genuine quantum-networking progress from overstated "quantum internet is here" claims, mirroring the honest-assessment discipline the database applies to computing (Files 1, 17, 22). Quantum networking is a real, progressing field with deployed QKD and impressive entanglement-distribution demonstrations, but the full quantum internet — like fault-tolerant computing — is a multi-decade effort gated by specific unsolved challenges (quantum memory, high-rate interconnects, transduction), and assessing it honestly requires holding both the genuine progress and the long road ahead in view.
