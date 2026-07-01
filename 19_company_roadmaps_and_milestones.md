@@ -107,3 +107,48 @@ A crucial 2023–2024 shift (File 9): the field-wide reframing from *"physical q
 Quantum-hardware roadmaps are forward-looking claims that must be assessed with a *skeptical framework*: track record on past stated milestones, peer-reviewed research vs. press-release claims, independent third-party benchmarking, awareness of metric-shifting (File 22), and separation of demonstrated from projected. Applying this framework: IBM (transparent roadmap, decent count-milestone track record, qLDPC pivot) and Quantinuum (strong QV/logical-qubit track record) have relatively high credibility; Google's demonstrated below-threshold error correction (File 9) is the strongest single validation of the fault-tolerant path; IonQ's self-defined #AQ metric and Microsoft's retraction-marred topological program warrant skepticism; PsiQuantum's high-variance single-milestone photonic bet is hard to assess incrementally; D-Wave has real annealing deployment but contested advantage and an unproven gate-model pivot; and Chinese programs' opacity complicates verification. The field-wide reframing (2023–2024) from physical-qubit count to logical-qubit count and application-feasibility crossovers (Files 9, 18) is the mature framing, and roadmaps should be assessed by their *logical* targets and *resource-estimated* crossovers (File 18), not raw counts. The durable lesson: credit demonstrated (peer-reviewed, independently-benchmarked) results and track record; discount projected milestones and press releases; and read all metrics with awareness of favorable framing — the skeptical, evidence-based roadmap assessment this file models, and the throughline connecting it to the benchmarking rigor (File 22), the competitive landscape (File 20), and the honest path-to-utility assessment (File 18) the database maintains throughout.
 
 *Cross-references: the hardware modalities behind each roadmap (Files 3–7); below-threshold error correction and qLDPC codes as roadmap milestones (File 9); resource estimation grounding application-feasibility crossovers (File 18); the competitive/business landscape (File 20); benchmarking metrics and metric-shifting (File 22); the classical-rebuttal dynamics affecting supremacy claims (File 14); Chinese program opacity and national context (File 21); the honest NISQ-application assessment tempering near-term roadmap claims (File 17).*
+
+---
+
+## Part IV — Additional Companies, Roadmap Table, and Worked Assessment
+
+### 12. Neutral-atom and other companies' roadmaps
+
+- **QuEra (neutral atoms, File 5):** roadmap from analog (Aquila, 256 qubits, on AWS) to digital gate-based systems with error correction, building on the 48-logical-qubit demonstration (File 9). Credibility: strong *peer-reviewed* results (the Nature logical-qubit paper) — academic-paper-driven credibility (File 20). Its stated logical-qubit scaling targets are among the more credible, backed by demonstrated results.
+- **Pasqal (neutral atoms, File 5):** analog and digital roadmap, partnership/co-development commercialization (File 20). Credibility: real analog products and industrial pilots; the digital/fault-tolerant path is the open question.
+- **Atom Computing (neutral atoms, File 5):** 1,225-atom array milestone (2023), Microsoft partnership for logical qubits. Credibility: demonstrated large arrays; logical-qubit results via the Microsoft partnership.
+- **Rigetti (superconducting, File 3):** roadmap emphasizing fidelity improvement and multi-chip modular scaling; smaller counts/fidelities than IBM/Google in recent benchmarks. Credibility: a public company (File 20) with trackable milestones, but has faced execution challenges — moderate credibility.
+- **Alice & Bob (cat qubits, File 7):** roadmap betting on biased-noise cat qubits reaching low-overhead fault tolerance with a 1D repetition code (File 9). Credibility: a focused, single-architecture bet; the key milestone is demonstrating high bit-flip suppression *during gates* (File 7) — an unproven but well-defined target.
+- **IQM (superconducting, File 3):** European on-prem and HPC-integrated systems; tunable couplers. Credibility: real product delivery to European HPC centers.
+
+### 13. Roadmap comparison table
+
+| Company | Modality | Roadmap style | Strongest demonstrated result | Key open milestone | Credibility notes |
+|---|---|---|---|---|---|
+| IBM | Superconducting | Granular public roadmap | qLDPC codes; utility demo | Modular qLDPC in hardware | Transparent, decent track record |
+| Google | Superconducting | Research-publication | Below-threshold error correction | Scaling to more logical qubits | Strong demonstrated science |
+| Quantinuum | Trapped ion | Quality/logical-qubit | Record QV; logical qubits | Scaling beyond tens of qubits | Strong QV/logical track record |
+| IonQ | Trapped ion | #AQ + revenue | #AQ progression | Networked/modular scaling | Self-defined metric; verify independently |
+| PsiQuantum | Photonic | Single big milestone | (limited public benchmarking) | Million-qubit FT machine | High-variance; hard to assess |
+| Microsoft | Topological | Repeatedly revised | (contested Majorana claims) | Confirming topological qubit | 2018 retraction; high skepticism |
+| D-Wave | Annealing (+gate pivot) | Product + pivot | Deployed annealing customers | Gate-model FT; proven advantage | Real deployment, contested advantage |
+| QuEra | Neutral atom | Analog→digital | 48 logical qubits | Digital FT scaling | Strong peer-reviewed results |
+| USTC (China) | SC + photonic | Publication | Zuchongzhi/Jiuzhang supremacy | (opaque commercial path) | Credible science, opaque commercial |
+
+The table applies the assessment framework (Part I) across the field: the companies with the strongest *demonstrated, peer-reviewed* results (Google, IBM, Quantinuum, QuEra) have the highest credibility for what they've shown; the companies with self-defined metrics (IonQ), retraction-marred track records (Microsoft), high-variance single-milestone bets (PsiQuantum), or opacity (Chinese programs) warrant more skepticism — regardless of the ambition of their projected milestones.
+
+### 14. Worked assessment: reading a roadmap claim
+
+Apply the framework (Part I) to a hypothetical: *"Company Z announces it will have 1000 logical qubits by 2028."* Assessment:
+
+1. **Track record:** has Z hit its *past* announced milestones on schedule? If it has repeatedly slipped, discount the 2028 claim heavily.
+2. **Demonstrated vs. projected:** how many logical qubits has Z *demonstrated* (peer-reviewed) *today*? If it's a handful (the current state, File 9), 1000 by 2028 is a ~100–200× scaling in ~3 years — aggressive; check against the resource-estimation-grounded feasibility (File 18) and the modality's scaling challenges (Files 3–7, 11).
+3. **Metric:** is "logical qubit" defined rigorously (a specific code, distance, and logical error rate) or loosely? A "logical qubit" at trivial distance is not the same as a low-error-rate one.
+4. **Independent benchmarking:** will the claim be independently verified (peer-reviewed, replicated)?
+5. **Infrastructure:** does the roadmap account for the control/decoding/cryogenic scaling (File 11) that 1000 logical qubits (= ~100,000s+ physical qubits) requires?
+
+Applying these, most aggressive projected-milestone claims should be *discounted* against the company's track record and the resource-estimation reality (File 18) — while its *demonstrated* results are credited as facts. This worked assessment is the practical skill this file builds: reading any roadmap claim through the framework, separating credible demonstrated results from discountable projections, and grounding the assessment in resource estimation (File 18) and the modality's real scaling challenges (Files 3–7, 11).
+
+### 15. The pattern of roadmap slippage
+
+A historical pattern worth noting: quantum-computing roadmaps have *frequently slipped*, and "useful quantum computing in N years" predictions have repeatedly been revised outward. This is not unique to quantum computing (emerging technologies commonly overpromise near-term timelines) but it is a strong prior: *default to skepticism* toward aggressive near-term roadmap claims, weight demonstrated results over projections, and expect slippage. The companies that have *avoided* the worst slippage (IBM's count milestones, Quantinuum's QV) earn credibility precisely by contrast. The pattern also cautions against the *reverse* error (dismissing the field because roadmaps slip) — the demonstrated results (below-threshold error correction, 48 logical qubits, File 9) are *real progress* even as the *timelines* slip. The disciplined view: credit real demonstrated progress, discount aggressive timelines, and track the resource-estimation-grounded feasibility (File 18) rather than the marketing timeline.
