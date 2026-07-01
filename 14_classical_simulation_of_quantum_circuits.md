@@ -134,3 +134,39 @@ A circuit is classically hard *only if it is high in all three* — high entangl
 - **The three hardness axes:** high entanglement + high T-count + sufficient depth = classically hard (all three required).
 
 Classical simulation, through these methods, is the moving-target benchmark (Section 1), the essential development/validation infrastructure (Section 2), and the map of quantum advantage's boundaries (Section 15). Its repeated catching-up (Google supremacy, IBM utility) teaches that advantage claims are provisional and that the low-complexity circuits NISQ hardware handles are often classically tractable too — so durable advantage likely requires fault tolerance. The disciplined engineer, facing any advantage claim, asks the classical-simulation questions: what is the circuit's entanglement, T-count, and depth; what is the best current classical method for it; has that method been *run*; and does the claim account for the device's own fidelity lowering the classical bar? These questions — the classical-comparison discipline — are the throughline to the honest assessment the database models throughout (Files 1, 10, 13, 17, 22).
+
+---
+
+## Part V — Historical Track Record and Practical Guidance
+
+### 17. The track record of classical catch-up
+
+A chronological view reinforces the moving-target principle (Section 1):
+
+- **2019:** Google Sycamore claims 10,000 years classical → IBM shows 2.5 days (same year) → later work shows hours.
+- **2021–2022:** USTC Zuchongzhi and Jiuzhang (photonic, File 6) supremacy claims → classical tensor-network and spoofing rebuttals for several.
+- **2023:** IBM utility (kicked Ising) → tensor-network and sparse-Pauli-dynamics classical matches within weeks (File 10).
+- **2024:** Google Willow (File 3) random-circuit sampling → new classical analyses.
+
+The pattern is unmistakable: *every* headline quantum-advantage claim has been followed by classical improvements narrowing or closing the gap, often within months. This does not diminish the quantum achievements (they drive progress on both sides and demonstrate genuine capability), but it establishes that *no single advantage claim should be treated as final*. The healthy scientific dynamic is the back-and-forth itself — quantum devices pushing classical algorithms to improve, and vice versa — with the *durable* advantage line receding toward the high-complexity, high-fidelity (ultimately fault-tolerant) regime where classical methods genuinely cannot follow.
+
+### 18. Practical guidance for assessing claims
+
+For an engineer or analyst evaluating a quantum-advantage claim, a checklist derived from this file:
+
+1. **What is the circuit's complexity?** Estimate its entanglement, T-count, and depth (Section 15) — is it in a classically-tractable regime?
+2. **What classical method was compared against?** Was it the *best current* method (tensor networks, sparse Pauli, GPU state-vector) or a *naive* one (worst-case state-vector)? Naive baselines inflate the claimed advantage.
+3. **Was the classical method actually run, or just estimated?** Estimates (especially naive ones) are frequently overturned; run comparisons are stronger.
+4. **Does the claim account for the device's fidelity?** A noisy device only needs to be matched at its own fidelity (Section 14), lowering the classical bar.
+5. **Is the task useful, or a contrived sampling problem?** Supremacy tasks (random-circuit/boson sampling) are not useful computations (File 6, 17); "advantage" on a useless task is a physics demonstration, not a practical achievement.
+6. **Has it been independently reproduced/rebutted?** Track the classical rebuttals as carefully as the original claim.
+
+Applying this checklist — the classical-comparison discipline — separates genuine, durable advantage (rare, high-complexity, high-fidelity) from provisional or overstated claims (common, low-complexity, naive-baseline, contrived-task). It is the practical embodiment of the moving-target principle, and it is the essential skill for honest assessment (Files 1, 10, 13, 17, 22).
+
+### 19. Why this matters for the field's credibility
+
+The classical-simulation discipline is not academic nitpicking — it is essential to the *field's credibility*. Overstated advantage claims (later overturned by classical methods) erode trust, feed hype cycles (File 24), and can misinform investment (File 24) and policy (File 21). Conversely, rigorous, classically-benchmarked claims (acknowledging the moving target, running the best classical method, using useful tasks) build durable credibility. The field's most respected practitioners (and this database) insist on the classical-comparison discipline precisely because it protects against the hype that has repeatedly damaged emerging technologies. For quantum computing to mature into a trusted technology (File 24), its advantage claims must survive classical scrutiny — and classical simulation is the scrutiny they must survive. This is why classical simulation, seemingly the "adversary" of quantum computing, is in fact essential to its healthy development: it keeps the field honest, drives both quantum and classical progress, and ensures that when genuine, durable quantum advantage arrives (in the fault-tolerant regime, File 9), it will be credible because it survived the moving-target test that lesser claims failed.
+
+### 20. Final summary
+
+Classical simulation of quantum circuits is central to quantum computing as both the moving-target benchmark every advantage claim must beat and the essential development/validation infrastructure the field relies on. The methods (state-vector, tensor-network, stabilizer, low-T-count, hybrid) reveal that classical hardness is governed by *entanglement, T-count, and depth* — not qubit count — and that a circuit is hard only if high in all three. The repeated classical catching-up (Google supremacy, IBM utility, and their rebuttals) establishes the moving-target principle: advantage claims are provisional, valid only against the best current classical method, and the low-complexity circuits NISQ hardware and error mitigation handle are often classically tractable too — so durable advantage likely requires fault tolerance to run the high-complexity, high-fidelity circuits classical methods cannot follow. The classical-comparison discipline (assess complexity, demand the best-run classical baseline, account for device fidelity, distinguish useful from contrived tasks, track rebuttals) is the essential skill for honest assessment and the field's credibility. This discipline is the throughline connecting classical simulation to the supremacy/utility debates (Files 1, 10), algorithm assessment and dequantization (Files 13, 25), application skepticism (File 17), and benchmarking rigor (File 22) — the honest evaluation of quantum computing's genuine, durable advantages versus its provisional and overstated claims.
