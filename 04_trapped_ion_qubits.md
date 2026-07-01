@@ -6,6 +6,21 @@
 
 ## Part I — Ion Trapping Physics
 
+
+**Linear Paul trap: a chain of ions confined by RF + DC fields:**
+
+```text
+   DC endcap        RF electrodes (oscillating)        DC endcap
+      (+)      ┌───────────────────────────────┐      (+)
+       ▓▓▓     │   ●    ●    ●    ●    ●    ●   │     ▓▓▓
+       ▓▓▓     │  ion  ion  ion  ion  ion  ion │     ▓▓▓
+      (+)      └───────────────────────────────┘      (+)
+               <---- Coulomb-spaced ion chain ---->
+   Radial confinement: RF pseudopotential (Mathieu equation)
+   Axial confinement:  static DC endcaps
+   Shared motional modes act as the "bus" for entangling gates.
+```
+
 ### 1. Why ions, and the Earnshaw obstacle
 
 A trapped-ion qubit is a single atomic ion (a charged atom) confined in vacuum by electromagnetic fields, with quantum information stored in two of its internal electronic/nuclear states. Ions are nature's perfect qubits in one crucial sense: **every ion of a given isotope is identical** — there is no fabrication variation, no disorder, no TLS bath (contrast the lithographic qubits of File 3). The same ¹⁷¹Yb⁺ ion has the same energy levels in every lab on Earth, set by atomic physics rather than manufacturing. This identity is the root of trapped ions' extraordinary reproducibility and coherence.
@@ -60,6 +75,17 @@ The choice of ion and of *which* internal states encode the qubit is a fundament
 
 ## Part II — Initialization, Manipulation, and Readout
 
+
+**The trapped-ion operating cycle (all done with lasers):**
+
+```mermaid
+flowchart LR
+    DOP["Doppler cool<br/>+ sideband cool<br/>(motional ground)"] --> INIT["Optical pumping<br/>-> |0⟩ (state prep)"]
+    INIT --> GATE["Single-qubit (Raman)<br/>+ MS 2-qubit gates"]
+    GATE --> DET["State-dependent<br/>fluorescence readout"]
+    DET -->|"bright = |1⟩<br/>dark = |0⟩"| RESULT["Measured bit<br/>(>99.9% fidelity)"]
+```
+
 ### 6. Laser cooling and motional ground-state preparation
 
 High-fidelity gates require the shared motional modes to be near their quantum ground state (few phonons), achieved by laser cooling in two stages:
@@ -90,6 +116,22 @@ Variants and refinements include amplitude/phase-modulated MS pulses (to decoupl
 ---
 
 ## Part III — Scaling Architectures
+
+
+**QCCD: shuttle ions between dedicated zones instead of one giant chain:**
+
+```mermaid
+flowchart LR
+    subgraph CHIP["QCCD chip (Quantinuum-style)"]
+        MEM1["Memory<br/>zone"] <-->|shuttle| GATE1["Gate<br/>zone"]
+        GATE1 <-->|shuttle| MEM2["Memory<br/>zone"]
+        GATE1 <-->|junction| GATE2["Gate<br/>zone"]
+    end
+    GATE2 --> READ["Readout zone"]
+```
+
+*Ions are physically transported (and re-cooled) between zones, keeping chains short
+so gate fidelity stays high — at the cost of shuttling time and control complexity.*
 
 The 20–30 ion single-chain limit (Section 4) means trapped-ion scaling requires architecture beyond a single chain. Two complementary approaches dominate.
 

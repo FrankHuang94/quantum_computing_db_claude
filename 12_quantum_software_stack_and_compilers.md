@@ -6,6 +6,19 @@
 
 ## Part I — The Full-Stack Layering
 
+
+**The quantum software stack — from user intent to physical pulses:**
+
+```mermaid
+flowchart TB
+    APP["Application / domain library<br/>(chemistry, finance, ML)"] --> ALG["Algorithm layer<br/>(VQE, QAOA, Shor)"]
+    ALG --> SDK["Circuit SDK<br/>(Qiskit, Cirq, PennyLane)"]
+    SDK --> IR["Intermediate representation<br/>(OpenQASM, QIR)"]
+    IR --> COMP["Compiler / transpiler<br/>(TKET, Qiskit transpiler)"]
+    COMP --> PULSE["Pulse layer<br/>(OpenPulse, waveforms)"]
+    PULSE --> HW["Control electronics -> QPU"]
+```
+
 ### 1. The layer model
 
 A quantum program descends through a stack of abstraction layers, each transforming the program toward physical execution:
@@ -128,6 +141,18 @@ The compiler applies optimization passes (File 8, Section 10): gate cancellation
 ---
 
 ## Part IV — Cross-Platform Intermediate Representations
+
+
+**Why an IR? Decoupling front-end SDKs from back-end hardware:**
+
+```text
+   Qiskit ─┐                                   ┌─ IBM QPU
+   Cirq  ──┤                                   ├─ Google QPU
+   TKET  ──┼──> [ OpenQASM 3 / QIR ] ──compile─┼─ IonQ / Quantinuum
+   Q#    ──┤        (common IR)                ├─ Rigetti
+   Braket ─┘                                   └─ simulators
+   Without an IR: M front-ends × N back-ends. With an IR: M + N.
+```
 
 ### 13. OpenQASM
 

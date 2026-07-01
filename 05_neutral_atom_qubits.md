@@ -6,6 +6,18 @@
 
 ## Part I — Optical Tweezer Trapping
 
+
+**Assembling a defect-free atom array with optical tweezers:**
+
+```mermaid
+flowchart LR
+    MOT["Load atoms<br/>from MOT"] --> RAND["Stochastic loading<br/>(~50% sites filled)"]
+    RAND --> IMG["Image array<br/>(which sites full?)"]
+    IMG --> MOVE["Rearrange with<br/>moving tweezers (AOD)"]
+    MOVE --> DEF["Defect-free<br/>ordered array"]
+    DEF --> COMP["Run quantum<br/>circuit"]
+```
+
 ### 1. Why neutral atoms, and why optical (not electromagnetic) trapping
 
 A neutral-atom qubit is a single neutral atom (rubidium, cesium, strontium, or ytterbium) held in vacuum by focused laser light, with quantum information stored in two long-lived internal states. Like trapped ions (File 4), neutral atoms are **identical by nature** — no fabrication variation, no material defects — giving excellent reproducibility and coherence. Unlike ions, neutral atoms **carry no net charge**, which has two profound consequences:
@@ -58,6 +70,22 @@ The combination of arbitrary geometry, dynamic reconfigurability, and stochastic
 
 ## Part II — Rydberg State Physics and Entangling Gates
 
+
+**Rydberg blockade — the mechanism behind neutral-atom entanglement:**
+
+```text
+   Two atoms, spacing R:
+
+   |r>  ___                     ___  |r>       Excite BOTH to Rydberg?
+        excite                 excite
+   |1>  ___    <-- R < R_b -->  ___  |1>       Interaction V(R) ~ C6/R^6
+   |0>  ___                     ___  |0>
+
+   If R < blockade radius R_b:  the strong van der Waals shift V(R)
+   detunes the doubly-excited state |rr> out of resonance ->
+   only ONE atom can be excited = conditional logic = CZ gate.
+```
+
 ### 7. Rydberg states: exaggerated everything
 
 A **Rydberg state** is an atomic state with a large principal quantum number n (typically n ≈ 50–100), in which the valence electron orbits far from the nucleus. Rydberg atoms have wildly exaggerated properties that scale steeply with n:
@@ -100,6 +128,19 @@ The encoding choice mirrors the trapped-ion hyperfine-vs-optical distinction (Fi
 ---
 
 ## Part III — Reconfigurable Connectivity and Architectural Flexibility
+
+
+**Zoned neutral-atom architecture (storage / entangling / readout):**
+
+```mermaid
+flowchart LR
+    STORE["Storage zone<br/>(long coherence,<br/>no lasers)"] -->|"coherent<br/>transport"| ENT["Entangling zone<br/>(Rydberg beams)"]
+    ENT -->|"transport"| READ["Readout zone<br/>(imaging)"]
+    READ -.->|"mid-circuit,<br/>reload"| STORE
+```
+
+*Because atoms are moved rather than wired, connectivity is programmable — any atom
+can be brought adjacent to any other, unlike fixed superconducting lattices.*
 
 ### 12. Mid-circuit atom movement and zoned architectures
 

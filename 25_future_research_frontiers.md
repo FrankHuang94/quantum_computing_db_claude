@@ -6,6 +6,20 @@
 
 ## Part I — Open Problems in Error Correction
 
+
+**The overhead cliff — the central open problem for scaling:**
+
+```text
+   Physical qubits needed per useful logical qubit:
+
+   TODAY:   ~1000 physical : 1 logical  (surface code, d~25)
+             ████████████████████ (huge)
+   GOAL:    ~100 physical : 1 logical   (qLDPC, better codes)
+             ██
+   Every 10x reduction in overhead pulls the timeline for useful
+   fault-tolerant computing years closer. This is THE lever.
+```
+
 ### 1. Real-time decoding at scale
 
 The most pressing systems-level QEC frontier (Files 9, 11): current decoder demonstrations operate at *small* code distances and qubit counts, but scaling **real-time decoding** to the thousands-to-millions of qubits that useful fault-tolerant algorithms require (File 18) — while maintaining decoding latency within the qubit coherence/cycle-time budget (~1 μs for superconducting, File 11) — remains substantially *unsolved at scale*:
@@ -159,6 +173,17 @@ These speculative directions (Files 4, 5, 13, 15) span the field's longer-horizo
 ---
 
 ## Part V — The Honest Timeline Calibration
+
+
+**A calibrated timeline — with honest uncertainty bands:**
+
+```mermaid
+flowchart LR
+    NOW["2025<br/>NISQ + early logical<br/>qubits (below threshold)"] --> NEAR["~2027–2030<br/>dozens of logical qubits,<br/>first useful FT demos"]
+    NEAR --> MID["~2030s<br/>hundreds–thousands<br/>logical qubits"]
+    MID --> FAR["~2035+<br/>cryptographically-relevant<br/>QC (RSA-2048)"]
+    FAR -.->|"large uncertainty:<br/>could be later"| CAVEAT["Dates are<br/>expectations, not promises"]
+```
 
 ### 14. The field's own most rigorous assessment
 

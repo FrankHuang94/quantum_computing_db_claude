@@ -52,3 +52,4 @@ Target: >= 100,000 words total; primary files (02,03,04,05,09,11,12,13,18,20,25)
 - 2026-07-01: FILE 24 committed. Total ~176k words. Only FILE 25 (PRIMARY) + README remain.
 - 2026-07-01: FILE 25 committed (PRIMARY). All 25 content files done. Only README remains.
 - 2026-07-01: README.md created. Final word-count sweep: all standard files >=4,000, all primaries >=12,000. TOTAL 191,543 words. DATABASE COMPLETE.
+- 2026-07-01: VISUALIZATION PASS. Added ~57 native-Markdown visuals across all 26 files to explain the underlying tech more clearly: Mermaid flowcharts (pipelines, cycles, decision trees), ASCII schematics (Bloch sphere, Paul trap, dilution-fridge stages, surface-code lattice, Josephson junction, NV center, threshold curve), and comparison tables. All original diagrams (no copyrighted company images) so they render on GitHub and carry no licensing risk. Code fences verified balanced in every file. README gained a "How the Database Fits Together" map.

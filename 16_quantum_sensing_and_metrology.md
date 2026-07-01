@@ -23,6 +23,21 @@ Applications: the redefinition of the SI second (moving from cesium microwave to
 
 ## Part III — NV-Center Diamond Sensing
 
+
+**NV-center magnetometry — a single atomic defect as a nanoscale sensor:**
+
+```text
+   Diamond lattice with a Nitrogen-Vacancy (NV) center:
+
+     C   C   C          NV spin levels shift with magnetic field B
+      \ | /             (Zeeman effect):
+   C — N V — C          1. Initialize spin with green laser
+      / | \             2. Manipulate with microwaves (ODMR)
+     C   C   C          3. Read out spin via red fluorescence
+                        => nanotesla sensitivity, nanometer resolution,
+                           operates at ROOM temperature.
+```
+
 The **nitrogen-vacancy (NV) center** in diamond (File 7) — a nitrogen atom adjacent to a lattice vacancy — hosts an electron spin that is optically initialized, coherently controlled (microwaves), and optically read out, **at room temperature** (a major practical advantage over cryogenic quantum-computing platforms). NV centers are a premier **quantum sensor**:
 
 - **Magnetometry:** the NV spin's energy levels shift with magnetic field (Zeeman effect), so measuring the spin resonance measures the local field with high sensitivity and *nanoscale spatial resolution* (a single NV center senses fields at the atomic scale). NV magnetometers are used in materials science, condensed-matter research, and **biology** (single-cell and single-molecule magnetic imaging, neural-activity sensing).

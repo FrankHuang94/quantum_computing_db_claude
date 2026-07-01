@@ -6,6 +6,18 @@
 
 ## Part I — Foundations of Quantum Error Correction
 
+
+**The QEC cycle: detect errors without measuring (and destroying) the data:**
+
+```mermaid
+flowchart LR
+    ENC["Encode 1 logical qubit<br/>into many physical qubits"] --> SYN["Measure stabilizers<br/>(ancilla qubits)"]
+    SYN --> SYND["Extract syndrome<br/>(error signature,<br/>NOT the data)"]
+    SYND --> DEC["Classical decoder<br/>infers error"]
+    DEC --> CORR["Apply correction"]
+    CORR --> SYN
+```
+
 ### 1. Why QEC is harder than classical error correction
 
 Classical error correction is easy in principle: to protect a bit, copy it (0 → 000, 1 → 111) and majority-vote to correct a single flip. This **repetition code** relies on two things quantum mechanics forbids or complicates:
@@ -47,6 +59,23 @@ A large and important family are **CSS codes** (Calderbank–Shor–Steane), whe
 
 ## Part II — The Threshold Theorem
 
+
+**The threshold theorem — why bigger codes help only below p_th:**
+
+```text
+   Logical error rate  P_L
+      ^
+      |  p > p_th (above threshold): MORE qubits => WORSE  ✗
+      |   \        ____________
+      |    \      /
+      |     \    /   p = p_th (break-even)
+      |      \  /
+      |  _____\/________  p < p_th: MORE qubits => exponentially BETTER ✓
+      |       P_L ~ (p/p_th)^(d/2)
+      +----------------------------------> code distance d
+   Surface-code threshold ~ 1%. Google 2024 crossed it (d=3->5->7 improved).
+```
+
 ### 6. Statement and significance
 
 The **threshold theorem** is the central theoretical result justifying the entire fault-tolerant program. Informally:
@@ -68,6 +97,22 @@ so *below threshold* (p < p_th), each increase in d multiplies p_L by a factor (
 ---
 
 ## Part III — The Surface Code
+
+
+**Surface code layout — data qubits on a lattice, stabilizers on the faces:**
+
+```text
+     D---X---D---X---D       D = data qubit
+     |   |   |   |   |       X = X-stabilizer ancilla (detects phase flips)
+     Z---D---Z---D---Z       Z = Z-stabilizer ancilla (detects bit flips)
+     |   |   |   |   |
+     D---X---D---X---D       A distance-d code uses ~2d^2 physical qubits
+     |   |   |   |   |       per logical qubit; only nearest-neighbor
+     Z---D---Z---D---Z       coupling is required (great for planar chips).
+```
+
+*Each ancilla repeatedly measures the parity of its four neighbors; a changing
+parity flags an error whose location the decoder reconstructs.*
 
 ### 8. Construction
 
@@ -121,6 +166,16 @@ This Clifford/T asymmetry — cheap Clifford gates, expensive T gates via distil
 ---
 
 ## Part IV — Alternative and Next-Generation Codes
+
+
+**Surface code vs. qLDPC — the overhead trade-off:**
+
+| Property | Surface code | Bivariate-bicycle qLDPC (IBM 2024) |
+|----------|-------------|-------------------------------------|
+| Connectivity | 2D nearest-neighbor (easy) | non-local / long-range (hard) |
+| Physical/logical overhead | ~1000:1 | ~10–15× fewer qubits |
+| Decoder maturity | very mature (MWPM) | active research (BP-OSD) |
+| Threshold | ~1% | ~0.7% |
 
 ### 14. Color codes
 
@@ -292,6 +347,17 @@ Before topological codes dominated, **concatenated codes** were the standard fau
 ---
 
 ## Part VIII — Magic States, Lattice Surgery, and Resource Mechanics in Depth
+
+
+**Magic-state distillation — purifying the non-Clifford resource:**
+
+```mermaid
+flowchart LR
+    NOISY["Many noisy<br/>|T⟩ states"] --> DISTILL["Distillation circuit<br/>(consume many,<br/>output few)"]
+    DISTILL --> BETTER["Fewer, higher-fidelity<br/>|T⟩ states"]
+    BETTER -->|"iterate"| DISTILL
+    BETTER --> INJECT["Inject into<br/>logical T gate"]
+```
 
 ### 35. Magic-state distillation quantitatively
 

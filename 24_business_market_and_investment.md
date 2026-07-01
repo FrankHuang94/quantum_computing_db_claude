@@ -6,6 +6,20 @@
 
 ## Part I — Market Sizing and Its Variance
 
+
+**Why market-size forecasts vary by 10x — what's being counted:**
+
+```text
+   $ (2035 forecast)
+     |  ████  "Economic impact" (McKinsey): includes downstream value
+     |  ████
+     |  ██    "QC market" (hardware+software+services)
+     |  █      "QC hardware revenue" (narrowest, most concrete)
+     +--------------------------------------------------
+   The headline "hundreds of billions" usually means IMPACT, not revenue.
+   Always ask: revenue, market, or economic-impact? Over what timeframe?
+```
+
 ### 1. Market-size estimates
 
 Published market-size forecasts for quantum computing vary *enormously* — often by an *order of magnitude or more* between sources — reflecting deep uncertainty:

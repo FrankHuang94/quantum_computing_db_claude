@@ -18,6 +18,20 @@ Beyond benchmarking advantage, classical simulators are *essential development a
 
 ## Part II — Simulation Methods
 
+
+**Choosing a classical simulation method by circuit structure:**
+
+```mermaid
+flowchart TB
+    C["Circuit to simulate"] --> Q1{"How many<br/>qubits?"}
+    Q1 -->|"≤ ~50, any depth"| SV["State-vector<br/>(exact, 2^n memory)"]
+    Q1 -->|"many qubits"| Q2{"Low<br/>entanglement?"}
+    Q2 -->|yes| MPS["Tensor networks /<br/>MPS (area-law states)"]
+    Q2 -->|no| Q3{"Clifford-<br/>dominated?"}
+    Q3 -->|yes| STAB["Stabilizer<br/>(Gottesman–Knill)"]
+    Q3 -->|"few non-Clifford"| SCH["Feynman /<br/>tensor contraction"]
+```
+
 ### 3. State-vector simulation
 
 **State-vector (Schrödinger) simulation** stores the full 2ⁿ complex-amplitude vector (File 2) and applies gates as matrix-vector operations:

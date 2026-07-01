@@ -6,6 +6,30 @@
 
 ## Part I — Josephson Junction Physics
 
+
+**The transmon: an anharmonic oscillator built from a Josephson junction:**
+
+```text
+  Energy
+    ^            harmonic (LC)          Josephson (transmon)
+    |          equally spaced          UNEQUAL spacing -> addressable
+    |   ___ |3>                         ___ |3>
+    |   ___ |2>     ω          ___ |2>   } ω12 = ω01 - α  (α<0)
+    |   ___ |1>     ω          ___ |1>   } ω01
+    |   ___ |0>                ___ |0>
+    +-------------------------------------------> flux φ
+  A single junction gives a cosine potential; its anharmonicity α (~ -200 MHz)
+  lets microwave pulses address ONLY the |0>-|1> transition = a clean qubit.
+```
+
+```mermaid
+flowchart LR
+    JJ["Josephson junction<br/>(Al/AlOx/Al)"] --> NL["Nonlinear<br/>inductance L_J"]
+    CAP["Shunt capacitor C"] --> LC
+    NL --> LC["Anharmonic<br/>LC resonator"]
+    LC --> Q["Transmon qubit<br/>ω01 ≈ 4–6 GHz"]
+```
+
 ### 1. Why superconductors, and why a junction
 
 A superconductor below its critical temperature carries current with zero resistance because electrons bind into **Cooper pairs** that condense into a single macroscopic quantum state described by one complex order parameter ψ = |ψ|e^{iφ} with a well-defined phase φ across the whole superconductor. Aluminum, the workhorse material, superconducts below ≈ 1.2 K. A bare superconducting loop or LC resonator, however, is a *linear* harmonic oscillator: its energy levels are evenly spaced (E_n = ℏω(n+½)). Evenly spaced levels are useless for a qubit, because any drive resonant with the |0⟩→|1⟩ transition is *equally* resonant with |1⟩→|2⟩, |2⟩→|3⟩, etc. — you cannot isolate a two-level subspace. **The essential ingredient is nonlinearity**, and the only known non-dissipative (lossless) nonlinear circuit element is the **Josephson junction**.
@@ -70,6 +94,22 @@ Fluxonium is a major research direction (Yale, Maryland, MIT Lincoln Lab, and st
 
 ## Part II — Circuit QED and Readout
 
+
+**Dispersive readout signal chain (millikelvin → room temperature):**
+
+```mermaid
+flowchart LR
+    Q["Transmon<br/>@ 10 mK"] -->|"dispersive shift χ"| RES["Readout<br/>resonator"]
+    RES --> IN["Readout tone in"]
+    RES --> JPA["JPA / TWPA<br/>(quantum-limited<br/>amp) @ 10 mK"]
+    JPA --> HEMT["HEMT amp<br/>@ 4 K"]
+    HEMT --> ADC["Room-temp<br/>ADC + FPGA"]
+    ADC --> IQ["I/Q discrimination<br/>|0⟩ vs |1⟩"]
+```
+
+*The qubit state pulls the resonator frequency by ±χ; measuring which way the tone
+is shifted reads the qubit without directly touching it (quantum non-demolition).*
+
 ### 8. The circuit-QED architecture
 
 Superconducting qubits are read out and coupled via **circuit quantum electrodynamics (circuit QED)** — the on-chip analogue of cavity QED, where the "atom" is the transmon and the "cavity" is a superconducting microwave resonator (a coplanar-waveguide or lumped-element LC resonator, typically 4–10 GHz). The qubit is capacitively coupled to its **readout resonator** with coupling strength g. The Jaynes–Cummings Hamiltonian governs the qubit–resonator system:
@@ -104,6 +144,21 @@ A complication: coupling the qubit to a resonator that is itself coupled to a lo
 
 ## Part III — Qubit–Qubit Coupling and Two-Qubit Gates
 
+
+**Two families of superconducting two-qubit gates:**
+
+```mermaid
+flowchart TB
+    subgraph FIX["Fixed-frequency (cross-resonance)"]
+        A1["Qubit A"] -->|"drive A at B's freq"| B1["Qubit B"]
+        B1 --> CR["CR / ECR gate<br/>(IBM). ~300–500 ns"]
+    end
+    subgraph TUN["Tunable coupler"]
+        A2["Qubit A"] --- C2["Tunable<br/>coupler"] --- B2["Qubit B"]
+        C2 --> CZ["Net-zero CZ<br/>(Google). ~40–60 ns"]
+    end
+```
+
 The two-qubit gate is the hardest, lowest-fidelity, and most architecture-defining element. The major vendors are distinguished largely by *how they couple qubits and which entangling gate they run*.
 
 ### 12. Coupling mechanisms and leakage control
@@ -129,6 +184,19 @@ Google's **Sycamore** and **Willow** processors use **flux-tunable transmons wit
 ---
 
 ## Part IV — Fabrication and Packaging
+
+
+**Superconducting qubit fabrication flow:**
+
+```mermaid
+flowchart LR
+    W["Si/sapphire<br/>wafer"] --> DEP["Sputter/evaporate<br/>Nb or Ta film"]
+    DEP --> LITH["E-beam / photo<br/>lithography"]
+    LITH --> ETCH["Etch capacitors,<br/>resonators, lines"]
+    ETCH --> JJ["Dolan/Manhattan<br/>junction (double-angle<br/>Al evaporation)"]
+    JJ --> AIR["Air-bridge /<br/>flip-chip 3D integration"]
+    AIR --> PKG["Package + wirebond<br/>-> dilution fridge"]
+```
 
 ### 16. Materials and the two-level-system (TLS) loss problem
 

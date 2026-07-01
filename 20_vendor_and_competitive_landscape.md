@@ -6,6 +6,17 @@
 
 ## Part I — Full-Stack Hardware Companies (Tech Giants)
 
+
+**The competitive landscape by qubit modality (2025 snapshot):**
+
+| Modality | Leaders | Strength | Key weakness |
+|----------|---------|----------|--------------|
+| Superconducting | IBM, Google | speed, fab maturity | wiring/cryo scaling |
+| Trapped ion | Quantinuum, IonQ | fidelity, connectivity | gate speed |
+| Neutral atom | QuEra, Pasqal, Atom Computing | qubit count, reconfig. | gate fidelity (improving) |
+| Photonic | PsiQuantum, Xanadu | networking, room-temp | photon loss |
+| Spin (Si) | Intel, silicon startups | CMOS manufacturability | early maturity |
+
 ### 1. IBM Quantum
 
 - **Business model:** primarily enterprise/research **cloud access** via IBM Quantum Network membership plus consulting/services revenue, embedded within IBM's broader enterprise-technology and consulting business — *not* a standalone quantum revenue line in IBM's reporting, which complicates market-size assessment (File 24).
@@ -140,6 +151,25 @@ A structural feature: the *relatively small total pool* of PhD-level researchers
 ---
 
 ## Part VI — Business-Model Taxonomy and Competitive Dynamics
+
+
+**Business-model taxonomy across the quantum stack:**
+
+```mermaid
+flowchart TB
+    subgraph FULL["Full-stack hardware"]
+        IBM["IBM"]; GOOG["Google"]; QTM["Quantinuum"]; IONQ["IonQ"]
+    end
+    subgraph CLOUD["Cloud aggregators"]
+        AWS["AWS Braket"]; AZ["Azure Quantum"]
+    end
+    subgraph SW["Software / services"]
+        QCTRL["Q-CTRL"]; ZAP["Zapata (defunct)"]; CQ["Classiq"]
+    end
+    FULL --> CLOUD
+    SW --> CLOUD
+    CLOUD --> USERS["Enterprise / research users"]
+```
 
 ### 21. The business-model taxonomy
 

@@ -84,6 +84,20 @@ This cryptographic dimension is what elevates quantum computing from an economic
 
 ## Part III — Post-Quantum Cryptography: The Dominant Near-Term Issue
 
+
+**"Harvest now, decrypt later" — why PQC migration is urgent today:**
+
+```text
+   TODAY                              FUTURE (cryptographically-relevant QC)
+   ┌──────────────┐   intercept &     ┌──────────────────────────┐
+   │ Adversary    │──store encrypted─>│ Run Shor's algorithm ->   │
+   │ captures RSA/ │   traffic now     │ decrypt the OLD data      │
+   │ ECC traffic  │                   │ retroactively             │
+   └──────────────┘                   └──────────────────────────┘
+   Data with a long secrecy lifetime (state secrets, health records)
+   is ALREADY at risk -> migrate to NIST PQC standards now.
+```
+
 ### 8. The PQC transition
 
 The **post-quantum cryptography (PQC) transition** is the *dominant near-term geopolitical/policy quantum-computing issue* — a concrete, already-in-motion response to the future quantum threat:
@@ -106,6 +120,17 @@ HNDL is the key insight driving PQC urgency: the threat is *present* (data harve
 ---
 
 ## Part IV — PQC Migration, Talent Policy, and Geopolitical Dynamics
+
+
+**NIST PQC migration path (standards finalized 2024):**
+
+```mermaid
+flowchart LR
+    INV["1. Inventory<br/>crypto assets"] --> PRIOR["2. Prioritize by<br/>data secrecy lifetime"]
+    PRIOR --> SEL["3. Adopt NIST standards<br/>(ML-KEM, ML-DSA, SLH-DSA)"]
+    SEL --> HYB["4. Hybrid classical+PQC<br/>during transition"]
+    HYB --> FULL["5. Full PQC deployment"]
+```
 
 ### 10. The scale and challenge of PQC migration
 

@@ -6,6 +6,19 @@
 
 ## Part I — Silicon Spin Qubits
 
+
+**Silicon spin qubit — a single electron spin in a gate-defined quantum dot:**
+
+```text
+      gate  gate  gate            Spin encodes the qubit:
+       |     |     |               |0> = spin-down  ↓
+     ┌─▼─────▼─────▼─┐             |1> = spin-up    ↑
+     │  ●QD    ●QD   │  <- isotopically purified 28Si (spin-free host)
+     └───────────────┘             Read out via Pauli spin blockade /
+       electrons confined          spin-to-charge conversion.
+       electrostatically           Manufacturable on CMOS lines (Intel).
+```
+
 ### 1. The concept and its commercial appeal
 
 A **spin qubit** encodes information in the spin of a single electron (or hole, or nucleus) confined in a **gate-defined quantum dot** in a semiconductor. The qubit states are spin-up |↑⟩ and spin-down |↓⟩, split by a magnetic field (Zeeman splitting). The overwhelming commercial appeal is **manufacturability**: spin qubits are made in **silicon** (or Si/SiGe heterostructures) using processes closely related to standard **CMOS semiconductor fabrication** — the same industry that manufactures billions of transistors per chip. If spin qubits work at scale, the argument goes, the semiconductor industry's decades of fabrication, yield, and integration expertise could be brought to bear, potentially enabling qubit densities and manufacturing maturity no other modality can match. Intel (leveraging its chip-manufacturing base) and academic groups (Delft/QuTech, UNSW, RIKEN, Wisconsin) lead this modality; startups include Diraq (Australia), Quantum Motion (UK), and equal1.
@@ -47,6 +60,20 @@ Spin qubits' promise is **manufacturability** (CMOS compatibility, tiny size, po
 
 ## Part II — Topological Qubits
 
+
+**Topological qubit concept — information stored non-locally in Majorana modes:**
+
+```mermaid
+flowchart LR
+    NW["Semiconductor<br/>nanowire + s-wave<br/>superconductor"] --> MZM["Majorana zero modes<br/>at wire ends"]
+    MZM --> NONLOCAL["Qubit stored<br/>NON-locally<br/>(split between ends)"]
+    NONLOCAL --> PROT["Topologically protected:<br/>local noise can't flip it"]
+    PROT --> BRAID["Braiding =<br/>fault-tolerant gates<br/>(still unproven at scale)"]
+```
+
+*The promise is hardware-level error protection; the reality (as of 2025) is that
+unambiguous, controllable Majorana qubits remain unconfirmed — high risk, high reward.*
+
 ### 9. The concept: information stored non-locally
 
 **Topological quantum computing** aims for qubits that are *intrinsically* protected from local noise by encoding information **non-locally**, in a global topological property that no local perturbation can access. The theoretical basis is **Majorana zero modes (MZMs)** — exotic quasiparticle excitations predicted to appear at the ends of **topological superconducting nanowires** (semiconductor nanowires with strong spin–orbit coupling, proximity-coupled to a superconductor, in a magnetic field). A pair of MZMs encodes one qubit, but the information is stored *non-locally* across the two spatially separated Majoranas — so a local error (noise touching one end) cannot corrupt the logical information, which lives in the *joint* state. This non-local encoding would provide **hardware-level error protection**, potentially requiring far less error-correction overhead than other modalities.
@@ -69,6 +96,21 @@ The honest, non-dismissive assessment: **topological qubits remain the least exp
 ---
 
 ## Part III — Bosonic and Cat Qubits
+
+
+**Cat qubits — biased noise by encoding in superpositions of coherent states:**
+
+```text
+   Logical states = coherent-state "cats":
+      |0_L> ~ |+α> + |-α>        (even cat)
+      |1_L> ~ |+α> - |-α>        (odd cat)
+
+   Bit-flips (|0_L>↔|1_L>)  : EXPONENTIALLY suppressed in |α|^2  ✓
+   Phase-flips              : linearly increase -> handle with a 1D repetition code
+
+   Result: a heavily BIASED noise channel -> far cheaper error correction
+   (Alice & Bob, AWS Ocelot pursue this).
+```
 
 ### 13. The concept: encoding in oscillator states
 

@@ -32,6 +32,25 @@ The honest one-line summary: **quantum computers are accelerators for problems w
 
 ## 2. Complexity-Theoretic Framing
 
+
+**Where quantum speedups live — the complexity landscape:**
+
+```mermaid
+flowchart TB
+    P["P<br/>classical, efficient"] --> BPP["BPP<br/>classical + randomness"]
+    BPP --> BQP["BQP<br/>quantum, efficient"]
+    BQP --> PSPACE["PSPACE"]
+    NP["NP<br/>verifiable"] --> PSPACE
+    P --> NP
+    BQP -. "factoring, simulation<br/>believed here" .-> NPI["NP-intermediate<br/>(e.g. factoring)"]
+    NPI --> NP
+    classDef q fill:#d5e8ff,stroke:#2b6cb0;
+    class BQP q;
+```
+
+*BQP (what a scalable quantum computer solves efficiently) is believed to strictly
+contain BPP but not to contain all of NP — quantum computers are not "faster at everything."*
+
 What separates quantum computing from perpetual-motion-style hype is that its central claims are anchored in computational complexity theory.
 
 ### 2.1 BQP and its neighbors
@@ -104,6 +123,29 @@ The current era is defined by the transition from *demonstrating* error correcti
 
 ## 4. The DiVincenzo Criteria in Detail
 
+
+**The five DiVincenzo criteria (plus two for networking) as a readiness checklist:**
+
+```mermaid
+flowchart LR
+    subgraph CORE["5 core criteria (computation)"]
+        C1["1. Scalable<br/>well-defined qubits"]
+        C2["2. Initialize to<br/>a fiducial state"]
+        C3["3. Long coherence<br/>vs. gate time"]
+        C4["4. Universal<br/>gate set"]
+        C5["5. Qubit-specific<br/>measurement"]
+    end
+    subgraph NET["+2 for networking"]
+        C6["6. Interconvert<br/>stationary/flying qubits"]
+        C7["7. Faithfully transmit<br/>flying qubits"]
+    end
+    C1 --> C2 --> C3 --> C4 --> C5
+    C5 -.-> C6 --> C7
+```
+
+*No platform aces all five effortlessly; each modality trades one criterion against another
+(e.g. ions win on coherence, superconductors win on gate speed).*
+
 DiVincenzo's five criteria (plus two networking criteria) remain the standard rubric against which every modality in Files 3–7 is evaluated.
 
 1. **A scalable physical system with well-characterized qubits.** "Well-characterized" means the qubit's Hamiltonian — energy levels, coupling to control fields, and to other qubits — is known precisely. "Scalable" means adding qubits does not require physically impossible resources. This criterion is where modalities diverge sharply: superconducting and spin qubits are fabricated (lithographically scalable but each needs control wiring, File 11); trapped ions and neutral atoms are identical-by-nature (no fabrication variation) but scale against optics/laser/vacuum limits (Files 4, 5).
@@ -149,6 +191,25 @@ A **physical qubit** is a single two-level quantum system with a raw error rate 
 ---
 
 ## 6. Industry Structure Overview
+
+
+**The quantum computing value chain (bottom = physics, top = end users):**
+
+```text
+   ┌───────────────────────────────────────────────────────────┐
+   │  END USERS: pharma, finance, materials, logistics, gov     │
+   ├───────────────────────────────────────────────────────────┤
+   │  ALGORITHMS & APPLICATIONS: chemistry, optimization, ML    │
+   ├───────────────────────────────────────────────────────────┤
+   │  SOFTWARE / COMPILERS: Qiskit, Cirq, TKET, Q#, Braket      │
+   ├───────────────────────────────────────────────────────────┤
+   │  ERROR CORRECTION / CONTROL: decoders, calibration, FPGAs  │
+   ├───────────────────────────────────────────────────────────┤
+   │  QPU HARDWARE: superconducting, ion, atom, photonic, spin  │
+   ├───────────────────────────────────────────────────────────┤
+   │  ENABLING TECH: dilution fridges, lasers, cryo-CMOS, fab   │
+   └───────────────────────────────────────────────────────────┘
+```
 
 The commercial and research ecosystem (detailed in Files 19–24) can be partitioned into layers:
 

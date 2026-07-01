@@ -6,6 +6,30 @@
 
 ## Part I — Qubit Formalism
 
+
+**The Bloch sphere — geometric picture of a single qubit:**
+
+```text
+                 |0>   (north pole, +z)
+                  |
+                  |     . |psi> = cos(θ/2)|0> + e^{iφ} sin(θ/2)|1>
+                  |    /
+                  |   /  θ  (polar angle -> amplitude)
+                  |  /
+                  | /
+    -x ___________|/_____________ +x
+                 /|
+                / |
+               /  |   φ (azimuth -> relative phase)
+              /   |
+           +y     |
+                  |
+                 |1>   (south pole, -z)
+```
+
+*Pure states live on the surface (radius 1); mixed states live inside; the fully
+mixed state I/2 sits at the center. Gates are rotations of this sphere.*
+
 ### 1. State vectors and Hilbert space
 
 A single qubit's pure state lives in a two-dimensional complex Hilbert space ℋ ≅ ℂ². The computational basis states are
@@ -109,6 +133,25 @@ Any local hidden-variable theory obeys |S| ≤ 2. Quantum mechanics, for an appr
 
 ## Part II — Quantum Gates and Universality
 
+
+**From a universal gate set to any unitary:**
+
+```mermaid
+flowchart LR
+    G["Universal set<br/>{H, T, CNOT}"] --> SU["Any single-qubit<br/>rotation (Euler)"]
+    G --> ENT["Entanglement<br/>(CNOT)"]
+    SU --> ANY["Any n-qubit<br/>unitary U"]
+    ENT --> ANY
+    ANY --> SK["Solovay–Kitaev:<br/>ε-approx in<br/>O(log^c(1/ε)) gates"]
+```
+
+| Gate | Matrix action | Role |
+|------|---------------|------|
+| X, Y, Z | Pauli rotations by π | bit/phase flips |
+| H | \|0⟩→(\|0⟩+\|1⟩)/√2 | basis change |
+| S, T | phase π/2, π/4 | non-Clifford (T = magic) |
+| CNOT | flips target if control=1 | entangling |
+
 ### 6. Single-qubit gates
 
 A single-qubit gate is a 2×2 **unitary** matrix U (U†U = I), preserving normalization. The most important gates:
@@ -189,6 +232,21 @@ A set of gates is **universal** if any unitary on any number of qubits can be ap
 ---
 
 ## Part III — Decoherence and Noise
+
+
+**How an ideal qubit degrades — the two clocks T1 and T2:**
+
+```mermaid
+flowchart TB
+    PURE["Pure state<br/>|ψ⟩"] -->|"amplitude damping<br/>(energy loss, rate 1/T1)"| RELAX["Relaxation<br/>|1⟩ → |0⟩"]
+    PURE -->|"phase damping<br/>(rate 1/Tφ)"| DEPH["Dephasing<br/>loss of coherence"]
+    RELAX --> MIX["Mixed state<br/>ρ (decohered)"]
+    DEPH --> MIX
+    MIX -.->|"1/T2 = 1/(2T1) + 1/Tφ"| CLK["T2 ≤ 2·T1"]
+```
+
+*T1 (energy relaxation) and T2 (phase coherence) set the budget: a gate of duration
+tg is only useful while tg ≪ T2. Everything in error correction exists to beat this clock.*
 
 This is the part an engineer cannot afford to treat lightly: *noise is the adversary the entire field is organized against*. Every modality (Files 3–7), the error-correction theory (File 9), mitigation (File 10), and resource estimation (File 18) is ultimately a response to the contents of this section.
 

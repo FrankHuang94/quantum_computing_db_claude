@@ -8,6 +8,20 @@ The database comprises **25 technical files plus this index**, totaling **~185,0
 
 ---
 
+## How the Database Fits Together
+
+```mermaid
+flowchart TB
+    F02["02 QM foundations"] --> HW["Hardware modalities<br/>03 supercond · 04 ion · 05 atom<br/>06 photonic · 07 spin/topo"]
+    F02 --> SW["Software & algorithms<br/>08 compilation · 12 stack · 13 algorithms"]
+    HW --> INFRA["Enabling tech<br/>11 control/cryo · 23 materials"]
+    HW --> QEC["Error handling<br/>09 QEC · 10 mitigation · 18 resource est."]
+    SW --> QEC
+    QEC --> APPS["Applications<br/>14 sim · 16 sensing · 17 NISQ · 15 networking"]
+    APPS --> BIZ["Landscape<br/>01 overview · 19 roadmaps · 20 vendors<br/>21 geopolitics · 22 benchmarks · 24 market"]
+    BIZ --> FUT["25 research frontiers"]
+```
+
 ## Reading Paths
 
 Different readers should traverse the database differently:

@@ -18,6 +18,19 @@ The physical foundation is the DiVincenzo *networking* criteria (File 1): the ab
 
 ## Part II — Quantum Key Distribution
 
+
+**BB84 quantum key distribution — security from measurement disturbance:**
+
+```mermaid
+flowchart LR
+    A["Alice: encode bits in<br/>random bases (rectilinear/diagonal)"] --> CH["Quantum channel<br/>(single photons)"]
+    CH --> B["Bob: measure in<br/>random bases"]
+    B --> SIFT["Public sifting:<br/>keep matching-basis bits"]
+    SIFT --> CHECK["Compare a sample<br/>for errors"]
+    CHECK -->|"error rate high<br/>=> eavesdropper!"| ABORT["Abort"]
+    CHECK -->|"low"| KEY["Shared secret key"]
+```
+
 ### 1. BB84
 
 **Quantum Key Distribution (QKD)** enables two parties to establish a shared secret key with **information-theoretic security** — security guaranteed by physics (the laws of quantum mechanics), not by computational assumptions. The foundational protocol is **BB84 (Bennett–Brassard, 1984)**:
@@ -51,6 +64,20 @@ The policy mainstream (File 21) favors **PQC** as the practical response (deploy
 ---
 
 ## Part III — Quantum Repeaters and Entanglement Distribution
+
+
+**Quantum repeater — beat fiber loss by chaining entanglement swaps:**
+
+```text
+   Direct link: photon loss ~ exp(-L)  =>  hopeless beyond ~100–200 km
+
+   Repeater chain:
+   A ==entangle== R1 ==entangle== R2 ==entangle== B
+        |              |              |
+        └── entanglement swapping at R1, R2 ──┘
+   Result: A and B share entanglement across long distance.
+   Requires quantum MEMORY at each node (no-cloning forbids amplification).
+```
 
 ### 5. The quantum repeater challenge
 

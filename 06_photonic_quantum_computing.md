@@ -54,6 +54,21 @@ The reliance on cryogenic detectors means photonic quantum computing is not enti
 
 ## Part III — Linear Optical and Measurement-Based Computing
 
+
+**Measurement-based (one-way) quantum computing — compute by measuring a cluster state:**
+
+```mermaid
+flowchart LR
+    SRC["Single-photon<br/>sources"] --> ENT["Entangle into<br/>cluster / graph state"]
+    ENT --> MEAS["Adaptive single-qubit<br/>measurements<br/>(basis chosen by prior results)"]
+    MEAS --> FF["Feed-forward<br/>corrections"]
+    FF --> OUT["Logical output"]
+```
+
+*Unlike the circuit model, MBQC front-loads all entanglement into a resource state;
+computation is then just a schedule of measurements — well matched to photonics,
+where entangling gates are hard but measurement is easy and fast.*
+
 ### 4. Linear optical quantum computing (KLM)
 
 The foundational result is **KLM (Knill–Laflamme–Milburn, 2001, Nature)**: *universal quantum computation is possible using only single photons, linear optical elements (beamsplitters, phase shifters), and measurement with feedforward* — despite the absence of any photon–photon interaction. The trick is **measurement-induced nonlinearity**: by interfering the computational photons with ancilla photons on beamsplitters and *measuring* the ancillas, one induces an effective nonlinear (entangling) operation on the computational photons — but only *probabilistically* (the gate succeeds only for certain measurement outcomes, "heralded" success). The naive two-qubit gate success probability is low (e.g., 1/4 or less), and boosting it toward 1 requires additional ancilla photons and heralding, at rapidly growing resource cost. KLM proved universality *in principle* but implied enormous overhead — the starting point that later models (MBQC, FBQC) sought to make practical.
@@ -81,6 +96,19 @@ PsiQuantum's public communication (File 19) emphasizes a **single large future m
 ---
 
 ## Part IV — Continuous-Variable Photonics
+
+
+**Two photonic encodings compared:**
+
+```text
+   DISCRETE-VARIABLE (DV)              CONTINUOUS-VARIABLE (CV)
+   qubit = single photon              qubit = squeezed light / GKP mode
+   |0> = |horizontal>                 information in field quadratures (x,p)
+   |1> = |vertical> (polarization)    measured by homodyne detection
+   photon loss = catastrophic         loss = finite squeezing degradation
+   Xanadu (GKP), PsiQuantum uses      Xanadu Borealis / CV cluster states
+   dual-rail DV photons
+```
 
 ### 7. Xanadu: continuous-variable and GKP encoding
 

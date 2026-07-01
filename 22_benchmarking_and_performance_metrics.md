@@ -18,6 +18,24 @@ This makes benchmarking a domain requiring *skeptical scrutiny* — the same dis
 
 ## Part II — The Metrics
 
+
+**The benchmarking hierarchy — from components to applications:**
+
+```text
+   ┌─────────────────────────────────────────────┐  Most application-relevant
+   │  APPLICATION benchmarks (QED-C, real tasks)  │        ▲
+   ├─────────────────────────────────────────────┤        │
+   │  SYSTEM benchmarks (Quantum Volume, CLOPS)   │        │ but harder to
+   ├─────────────────────────────────────────────┤        │ interpret / game
+   │  HOLISTIC (randomized benchmarking, XEB)     │        │
+   ├─────────────────────────────────────────────┤        │
+   │  COMPONENT (T1/T2, 1q/2q gate fidelity)      │  Most precise, least
+   └─────────────────────────────────────────────┘  predictive of usefulness
+```
+
+*No single number captures a machine; a high qubit count with poor fidelity or
+sparse connectivity can be worse than a smaller, cleaner device.*
+
 ### 1. Raw physical qubit count
 
 The most commonly cited but *least informative* metric in isolation:

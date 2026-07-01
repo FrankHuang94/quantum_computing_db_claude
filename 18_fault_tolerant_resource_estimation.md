@@ -6,6 +6,19 @@
 
 ## Part I — The Resource Estimation Pipeline
 
+
+**Resource estimation: from an algorithm to a physical-qubit count and runtime:**
+
+```mermaid
+flowchart TB
+    ALG["Logical algorithm<br/>(e.g. Shor for RSA-2048)"] --> LC["Logical resources:<br/>logical qubit count,<br/>T-count, circuit depth"]
+    LC --> QEC["Choose code + distance d<br/>(target logical error rate)"]
+    QEC --> FAC["Add magic-state<br/>factories (T supply)"]
+    FAC --> PHYS["Physical qubits =<br/>logical × code overhead<br/>+ factories"]
+    PHYS --> TIME["Runtime = cycles ×<br/>code-cycle time"]
+    TIME --> OUT["e.g. ~20M qubits,<br/>~8 hours (Gidney–Ekerå 2019)"]
+```
+
 ### 1. Why resource estimation is its own discipline
 
 Translating a logical algorithm into a physical machine specification requires *composing models across every layer* covered in this database:
@@ -134,6 +147,23 @@ The levers are largely *multiplicative and complementary*: a machine combining l
 ---
 
 ## Part V — T-Count, Distillation, and Space-Time Volume
+
+
+**Space-time volume — the real currency of fault-tolerant cost:**
+
+```text
+   Cost = (physical qubits)  ×  (time)  =  "space-time volume"
+
+     qubits
+       ^   ┌───────────────┐
+       │   │  magic-state  │   Most of the volume is often spent
+       │   │   factories   │   DISTILLING T-states, not on the
+       │   ├───────────────┤   logical data itself. Reducing T-count
+       │   │  logical data │   is therefore the highest-leverage
+       │   │   qubits      │   algorithmic optimization.
+       │   └───────────────┘
+       └────────────────────────> time (code cycles)
+```
 
 ### 13. T-count in depth
 

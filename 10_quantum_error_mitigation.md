@@ -23,6 +23,22 @@ Mitigation techniques generally estimate **expectation values** ⟨O⟩ = ⟨ψ|
 
 ## Part II — The Core Techniques
 
+
+**Zero-noise extrapolation (ZNE) — the most common mitigation technique:**
+
+```text
+   <O>  (observable)
+    ^
+    |  *  measured at 3x noise
+    |     *  measured at 2x noise
+    |        *  measured at 1x noise (native)
+    |            ?  <-- extrapolate to ZERO noise
+    | - - - - - - - o  (mitigated estimate)
+    +------------------------------> noise scale λ
+   Run the SAME circuit at deliberately amplified noise, fit, extrapolate to λ=0.
+   No extra qubits — but sampling cost and bias grow with circuit size.
+```
+
 ### 3. Zero-noise extrapolation (ZNE)
 
 **ZNE** is the most widely used mitigation technique. The idea: deliberately *increase* the noise to several controlled levels, measure the (biased) expectation value at each, and *extrapolate back* to the zero-noise limit.

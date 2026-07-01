@@ -6,6 +6,24 @@
 
 ## Part I — Dilution Refrigeration
 
+
+**The dilution-refrigerator temperature stages (the "chandelier"):**
+
+```text
+   300 K   ── Room temp: control electronics, ADC/DAC, FPGAs
+     |         (coax cables + attenuators descend through each stage)
+    50 K   ── Pulse-tube 1st stage
+     |
+     4 K   ── Pulse-tube 2nd stage; HEMT amplifiers
+     |
+   0.7 K   ── Still
+     |
+   100 mK  ── Cold plate
+     |
+    10 mK  ── Mixing chamber:  QPU + quantum-limited (JPA/TWPA) amps
+              kT here ≪ hf(5 GHz) => qubits stay in the ground state
+```
+
 ### 1. Why ultra-low temperature is required
 
 Superconducting qubits (File 3) operate at **~10–20 mK** — among the coldest environments in the universe, far colder than interstellar space (~2.7 K). Two physical requirements set this:
@@ -43,6 +61,18 @@ This tiny cooling budget at the coldest stage is the root of the **wiring bottle
 ---
 
 ## Part II — The Wiring Bottleneck and Cryogenic Signal Delivery
+
+
+**The wiring bottleneck — why "just add qubits" doesn't scale:**
+
+```mermaid
+flowchart TB
+    Q["N qubits"] --> W["~3–5 control lines<br/>each (drive, flux, readout)"]
+    W --> HEAT["Each coax carries<br/>heat + needs attenuation"]
+    HEAT --> LIMIT["Fridge cooling power<br/>@ 10 mK is ~µW"]
+    LIMIT --> WALL["10^6 qubits => 10^6+ wires<br/>=> physically impossible<br/>with today's approach"]
+    WALL --> SOLN["Fixes: cryo-CMOS multiplexing,<br/>photonic links, frequency mux"]
+```
 
 ### 4. The heat-load problem, quantified
 
@@ -150,6 +180,18 @@ The GHz signals driving qubits must be spectrally pure: **phase noise** on the l
 ---
 
 ## Part V — Real-Time Feedback and the Classical Co-Processor
+
+
+**The real-time decoding loop must keep up with the QEC cycle:**
+
+```mermaid
+flowchart LR
+    QPU["QPU: syndrome<br/>measurement (~1 µs cycle)"] --> STREAM["Stream syndromes"]
+    STREAM --> DEC["FPGA/ASIC decoder<br/>(must finish < cycle time)"]
+    DEC --> FEED["Feed-forward<br/>correction"]
+    FEED --> QPU
+    DEC -.->|"too slow => backlog<br/>= decoder bottleneck"| FAIL["Logical failure"]
+```
 
 ### 16. Why classical co-processing is inseparable from quantum computing
 

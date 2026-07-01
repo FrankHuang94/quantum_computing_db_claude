@@ -50,6 +50,24 @@ The recurring reality (Files 10, 14): **the low-complexity circuits NISQ hardwar
 
 ## Part III — The Evaluation Checklist and Meta-Assessment
 
+
+**A skeptic's checklist: is a claimed NISQ "advantage" real?**
+
+```mermaid
+flowchart TB
+    CLAIM["Claimed quantum<br/>advantage / value"] --> Q1{"Beats BEST<br/>classical method?"}
+    Q1 -->|no| FAIL1["Not advantage<br/>(strawman baseline)"]
+    Q1 -->|yes| Q2{"Problem has<br/>real-world value?"}
+    Q2 -->|no| FAIL2["Contrived task"]
+    Q2 -->|yes| Q3{"Scales beyond<br/>toy size?"}
+    Q3 -->|no| FAIL3["Doesn't scale"]
+    Q3 -->|yes| Q4{"Peer-reviewed,<br/>reproducible?"}
+    Q4 -->|no| FAIL4["Press release"]
+    Q4 -->|yes| REAL["Credible claim"]
+    classDef good fill:#d5f5e3,stroke:#27ae60;
+    class REAL good;
+```
+
 ### 6. Pattern recognition across hype cycles
 
 The most valuable skill for evaluating *any* quantum-advantage claim (across chemistry, optimization, ML, finance) is a **checklist** of skeptical questions — the meta-level tool this file provides:

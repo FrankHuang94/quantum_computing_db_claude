@@ -6,6 +6,23 @@
 
 ## Part I — Shor's Algorithm
 
+
+**Shor's algorithm — reduce factoring to quantum period-finding:**
+
+```mermaid
+flowchart TB
+    N["Factor N"] --> PICK["Pick random a < N"]
+    PICK --> CL["Classical: gcd(a,N)?<br/>(lucky shortcut)"]
+    CL --> QPE["QUANTUM CORE:<br/>find period r of a^x mod N<br/>via Quantum Fourier Transform"]
+    QPE --> POST["Classical post-process:<br/>gcd(a^(r/2) ± 1, N)"]
+    POST --> FAC["Nontrivial factor of N"]
+    classDef q fill:#d5e8ff,stroke:#2b6cb0;
+    class QPE q;
+```
+
+*Only the period-finding step is quantum; the exponential speedup comes entirely
+from the QFT extracting the period in O(poly(log N)) instead of exponential trials.*
+
 ### 1. Problem and significance
 
 **Shor's algorithm (1994)** factors an *n*-bit integer N in time polynomial in *n* — specifically O(n² log n log log n) with fast arithmetic, or roughly O(n³) in simpler implementations — versus the best-known classical algorithm, the **general number field sieve (GNFS)**, which runs in sub-exponential but super-polynomial time exp(O(n^{1/3} (log n)^{2/3})). This is the canonical **exponential quantum speedup**, and its practical significance is immense: the security of **RSA** (factoring), **Diffie–Hellman**, and **elliptic-curve cryptography** (discrete logarithm) rests on the classical hardness of exactly these problems. A sufficiently large fault-tolerant quantum computer running Shor's algorithm would break essentially all currently-deployed public-key cryptography — the motivation for the entire post-quantum cryptography transition (File 21).
@@ -46,6 +63,22 @@ Shor's algorithm extends to the **discrete logarithm problem (DLP)** via a close
 
 ## Part II — Grover's Algorithm and Amplitude Amplification
 
+
+**Grover iteration — rotate the state toward the marked answer:**
+
+```text
+   Amplitude of marked item
+      ^
+   1  |                                   ___ * (measure here)
+      |                          ___*
+      |                 ___*                after ~ (π/4)√N iterations
+      |        ___*                         amplitude is near 1
+      | ___*
+      +----------------------------------> Grover iterations
+   Each iteration = oracle (flip sign of answer) + diffusion (reflect about mean).
+   Quadratic speedup: √N vs N. NOT exponential.
+```
+
 ### 6. Problem and the provable quadratic speedup
 
 **Grover's algorithm (1996)** searches an unstructured space of N items for a marked item using O(√N) queries to an oracle, versus O(N) classically — a **quadratic speedup**. Crucially, this speedup is **provably optimal**: no quantum algorithm can solve unstructured search in fewer than Ω(√N) queries (a rare case where the quantum speedup limit is *rigorously proven*, not merely conjectured — the BBBV lower bound). Grover's algorithm is the archetype of the *quadratic* speedup class, applicable to any unstructured search or, more broadly, to speeding up brute-force search over a solution space.
@@ -74,6 +107,19 @@ An essential honest caveat (echoed in Files 17, 18): a **quadratic** speedup, wh
 ---
 
 ## Part III — Quantum Simulation Algorithms
+
+
+**Simulating quantum systems — the original motivation (Feynman):**
+
+```mermaid
+flowchart LR
+    H["Hamiltonian H<br/>(molecule/material)"] --> METH{Method}
+    METH -->|"early / NISQ"| TROT["Trotterization<br/>e^{-iHt} ≈ Π e^{-iH_k Δt}"]
+    METH -->|"fault-tolerant"| QUB["Qubitization /<br/>LCU (near-optimal)"]
+    TROT --> EVOLVE["Time-evolve state"]
+    QUB --> EVOLVE
+    EVOLVE --> OBS["Measure energies,<br/>correlation functions"]
+```
 
 ### 10. Why quantum simulation is the most defensible application
 
@@ -108,6 +154,18 @@ The flagship simulation application is **quantum chemistry** — computing molec
 ---
 
 ## Part IV — Variational Quantum Eigensolver (VQE) and QAOA
+
+
+**The variational loop — a quantum-classical hybrid:**
+
+```mermaid
+flowchart LR
+    INIT["Initial params θ"] --> QC["QUANTUM: prepare<br/>ansatz |ψ(θ)⟩,<br/>measure ⟨H⟩"]
+    QC --> COST["Cost = energy E(θ)"]
+    COST --> OPT["CLASSICAL optimizer<br/>updates θ"]
+    OPT -->|"repeat until converged"| QC
+    OPT -.->|"barren plateaus:<br/>gradients vanish<br/>exponentially"| WARN["Scalability risk"]
+```
 
 ### 14. VQE structure
 

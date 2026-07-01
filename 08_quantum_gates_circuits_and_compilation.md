@@ -6,6 +6,18 @@
 
 ## Part I — Gate-Set Decomposition and the Compilation Problem
 
+
+**The compilation pipeline: from abstract algorithm down to hardware pulses:**
+
+```mermaid
+flowchart TB
+    ALGO["High-level circuit<br/>(arbitrary gates)"] --> DECOMP["1. Decompose to<br/>native gate set"]
+    DECOMP --> MAP["2. Qubit mapping<br/>+ routing (SWAPs)"]
+    MAP --> OPT["3. Optimize<br/>(cancel/merge gates)"]
+    OPT --> SCHED["4. Schedule +<br/>pulse-level timing"]
+    SCHED --> HW["Executable on QPU"]
+```
+
 ### 1. Why compilation is necessary
 
 An algorithm is expressed in *abstract* gates (arbitrary single-qubit rotations, CNOTs, multi-controlled gates, arbitrary unitaries). Real hardware supports only a small **native gate set** — a few calibrated single-qubit rotations plus *one* entangling gate, which differs by modality (File 2, Section 7): CZ/cross-resonance (superconducting, File 3), Mølmer–Sørensen (trapped ion, File 4), Rydberg CZ (neutral atom, File 5). The compiler must **decompose** every abstract operation into the native set, **map** logical qubits to physical qubits, **route** interactions across a limited-connectivity graph, **schedule** gates for parallelism, and **optimize** the result — all while respecting the hardware's noise structure. This is called **transpilation** in Qiskit (IBM's terminology) and is the central systems problem bridging algorithms and hardware.
@@ -25,6 +37,19 @@ A crucial hardware optimization (superconducting, File 3): an R_z(λ) rotation c
 ---
 
 ## Part II — The Circuit-to-Hardware Mapping Problem
+
+
+**Routing: inserting SWAPs when connectivity is limited:**
+
+```text
+   Circuit wants CNOT(q0,q3)         Hardware connectivity (line):
+                                        q0 - q1 - q2 - q3
+   q0 and q3 are NOT adjacent  ->  insert SWAPs to move them together:
+
+     SWAP(q0,q1) ; SWAP(q1,q2) ; CNOT(q2,q3) ; (undo)
+     Each SWAP = 3 CNOTs -> routing overhead can DOMINATE circuit depth
+     on sparse hardware. This is why connectivity is a headline metric.
+```
 
 ### 4. Connectivity graphs and the routing problem
 

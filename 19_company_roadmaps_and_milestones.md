@@ -6,6 +6,22 @@
 
 ## Part I — Methodology for Assessing Roadmap Credibility
 
+
+**How to grade a hardware roadmap (signal vs. marketing):**
+
+```mermaid
+flowchart LR
+    RM["Vendor roadmap"] --> T{"Past milestones<br/>hit on time?"}
+    T -->|yes| CRED["Track record ✓"]
+    T -->|slipped| DISCOUNT["Discount future dates"]
+    RM --> M{"Milestones =<br/>qubit COUNT or<br/>logical PERFORMANCE?"}
+    M -->|count only| SOFT["Softer signal"]
+    M -->|logical error rate| HARD["Harder signal ✓"]
+    RM --> V{"Third-party<br/>verifiable?"}
+    V -->|peer-reviewed| STRONG["Stronger"]
+    V -->|press release| WEAK["Weaker"]
+```
+
 Before surveying roadmaps, establish the *assessment framework* — the most valuable content of this file:
 
 - **Track record on past stated milestones:** the single best credibility indicator is whether a company *hit* its previously-announced near-term targets, and by how much it slipped when it didn't. A company with a history of on-schedule delivery earns more credence for future claims than one that repeatedly slips or redefines metrics.

@@ -29,6 +29,21 @@ The superconducting films forming the qubit's capacitor pads, resonators, and gr
 
 ## Part II — Josephson Junction Fabrication
 
+
+**Double-angle (Dolan-bridge) Josephson junction fabrication:**
+
+```text
+   Cross-section of the shadow-evaporation trick:
+
+     resist bridge                Step 1: evaporate Al at +angle
+      ___████___                  Step 2: oxidize (grows AlOx barrier)
+     /   ||   \                   Step 3: evaporate Al at -angle
+    Al1  ||  Al1                  => overlap region = Al / AlOx / Al
+    ═════╬╬═════  <- AlOx barrier     = the Josephson junction
+    Al2  ||  Al2                  Barrier thickness (~1–2 nm) sets the
+                                  critical current => qubit frequency.
+```
+
 ### 3. The Dolan bridge technique
 
 The Josephson junction's AlOₓ tunnel barrier (File 3) is made by **double-angle shadow evaporation** using a suspended resist bridge (the **Dolan bridge**):
