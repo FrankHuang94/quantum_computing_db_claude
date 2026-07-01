@@ -85,3 +85,54 @@ The one near-term application with the strongest claim to genuine scientific val
 Near-term (NISQ) quantum computing is, honestly assessed, a domain of *capability-building and scientific exploration* rather than demonstrated practical advantage. Quantum chemistry, optimization (including D-Wave's commercially-deployed but advantage-contested annealing), quantum machine learning, finance, and pharma all show the same pattern: sound theoretical promise (for chemistry/simulation) or heavy marketing (for optimization/ML/finance), but *no broadly-accepted, reproducible, practically-significant advantage* over the best classical methods, because the low-complexity circuits NISQ handles are often classically tractable too (Files 10, 14). The rigorously-grounded applications (quantum chemistry, amplitude-estimation finance) require *fault tolerance* for useful sizes (File 18); the near-term pilots (optimization, ML) have unproven advantage. The genuine near-term value lies in capability-building (algorithms, software, expertise for the fault-tolerant future), scientific exploration (analog simulation of many-body physics — the strongest case), and hardware/algorithm development — not in practical advantage. The essential skill is the evaluation checklist (Section 6): demand the best-run classical baseline, assess problem size vs. crossover, distinguish useful from contrived tasks, require independent reproduction, and account for the full stack and error-mitigation overhead. This disciplined, evidence-based, classically-benchmarked assessment — separating demonstrated from theoretical from overhyped — is the honest calibration this file contributes, and it is the throughline connecting the algorithm caveats (File 13), classical-simulation discipline (File 14), mitigation limits (File 10), and benchmarking rigor (File 22) into a realistic picture of what near-term quantum computing can and cannot do.
 
 *Cross-references: algorithm speedup assessment and contested QAOA/QML advantage (File 13); classical-simulation moving-target and the low-complexity vise (File 14); error-mitigation limits and the IBM utility debate (File 10); D-Wave annealing roadmap (File 19); the resource estimation showing useful chemistry needs fault tolerance (File 18); analog simulation on neutral atoms and ions (Files 4, 5); benchmarking rigor and the checklist (File 22); the business/market hype dynamics (File 24); quantum sensing as realized (contrasting) advantage (File 16).*
+
+---
+
+## Part IV — Case Studies, D-Wave in Depth, and Worked Checklist Applications
+
+### 10. The IBM utility case study
+
+The **IBM 2023 "utility" demonstration** (File 10) is the definitive NISQ case study, illustrating every theme of this file. IBM ran a kicked-Ising simulation on 127 qubits with error mitigation, claiming results beyond brute-force classical simulation. Applying the checklist (Section 6):
+
+- *Best classical algorithm?* Not brute-force state-vector (the naive baseline IBM implicitly compared against) but tensor networks and sparse Pauli dynamics (File 14).
+- *Actually run?* Within weeks, multiple groups *ran* these classical methods and matched IBM's results (File 10).
+- *Problem size vs. crossover?* The circuit's limited entanglement kept it in the classically-tractable regime (File 14).
+- *Useful task?* The kicked-Ising model is physics-relevant but the specific demonstration was more a benchmark than a useful computation.
+- *Reproduced?* The classical rebuttals were independent.
+
+Verdict: IBM's results were *correct* (a genuine demonstration of error mitigation at scale), but the "beyond classical" framing did not survive scrutiny — the classic pattern of a NISQ advantage claim overturned by better-run classical methods. This case study is the template for evaluating *any* NISQ advantage claim, and it embodies the low-complexity vise (Files 10, 14): the circuits mitigation handles are those classical methods handle too.
+
+### 11. D-Wave and quantum annealing in depth
+
+D-Wave deserves detailed treatment as the most commercially-mature and most-debated quantum-computing platform:
+
+- **Technology:** quantum annealing (File 2, Section 38) — a non-gate-model paradigm evolving a system of thousands of superconducting flux qubits toward the ground state of a programmable Ising Hamiltonian encoding an optimization problem. Advantage-series systems have >5000 qubits (though with limited connectivity — the Pegasus/Zephyr graph — requiring minor-embedding that reduces effective problem size).
+- **Commercial reality:** D-Wave has a multi-year track record of *paying commercial customers* (Volkswagen, Denso, financial firms, and others) using current hardware for production-style optimization workloads — genuinely the most commercially-deployed quantum computing (Files 19, 20).
+- **The advantage debate:** whether annealing provides genuine *advantage* is contested. Early "quantum speedup" claims were repeatedly challenged: classical simulated annealing, specialized solvers, and even classical algorithms *inspired by* analyzing D-Wave's dynamics often match or beat it on the same problems. D-Wave has published claims of advantage on specific *quantum-simulation* tasks (using the annealer as a quantum simulator rather than optimizer, where the advantage claim is more defensible), but broad *optimization* advantage remains unproven.
+- **Strategic pivot:** notably, D-Wave has recently begun *also* pursuing gate-model fault-tolerant research (File 19), reflecting industry consensus pressure toward gate-model universality — a significant move for a company historically defined by its annealing-only approach.
+
+D-Wave exemplifies the tension between *commercial deployment* (real, with paying customers) and *demonstrated advantage* (contested) — a distinction crucial for honest assessment: commercial use does not equal proven advantage, and D-Wave's customers use it as a *heuristic tool* (sometimes helpful, sometimes not) rather than a proven-superior solver. This nuance — commercial traction alongside contested advantage — is central to interpreting D-Wave's role (Files 19, 20).
+
+### 12. Worked checklist: a hypothetical logistics claim
+
+Apply the checklist (Section 6) to a hypothetical: *"Company X used a quantum computer to optimize delivery routes, reducing costs 15%."*
+
+1. *Best classical algorithm?* State-of-the-art vehicle-routing solvers (Concorde-style, OR-Tools, specialized heuristics) are extremely good — was the 15% reduction relative to *these*, or to the company's *old* method?
+2. *Actually run?* Was the best classical solver run on the same instance, or is "quantum" credited for a reduction a good classical solver would also achieve?
+3. *Problem size?* Small enough for classical exact solvers, or genuinely large?
+4. *Useful/reproduced?* Independent verification?
+
+Almost invariably, such claims reduce to: a quantum (or quantum-inspired) method beat the company's *previous, suboptimal* approach — not the best classical method. The "15% reduction" is real but the *quantum* attribution is unjustified (a good classical solver would do as well or better). This is the single most common pattern in optimization-advantage marketing (Section 2), and the checklist exposes it: the comparison is against a weak baseline, not the best classical method. Recognizing this pattern is essential for anyone evaluating enterprise quantum-optimization pilots (File 24).
+
+### 13. The hype-cycle dynamics
+
+NISQ applications exist within a broader **hype cycle** (File 24): media coverage, investor enthusiasm, and vendor marketing frequently outrun demonstrated results, followed by disillusionment when advantage fails to materialize on schedule. The healthy response is neither uncritical enthusiasm nor blanket dismissal, but *evidence-based, classically-benchmarked assessment* (Section 6) — crediting genuine achievements (analog simulation science, capability-building, the occasional benchmarked result) while skeptically scrutinizing advantage claims. The pattern recognition this file builds — identifying weak-baseline comparisons, asymptotic-only arguments, contrived tasks, and unreproduced claims — is the antidote to the hype cycle, and it is a skill that transfers across every application domain and every new claim an engineer or analyst encounters. The field's credibility (File 24) depends on the community holding claims to this standard, and the disillusionment phases of past hype cycles (in quantum and other emerging technologies) are largely the consequence of claims that would not have survived the checklist.
+
+### 14. What would change the assessment
+
+To be clear about what evidence *would* update this skeptical assessment toward demonstrated NISQ advantage:
+
+- A *useful* computation (not contrived sampling) where the *best current* classical method was *run* and genuinely beaten, at a *practically-relevant* size, *independently reproduced*.
+- This has *not* yet happened for a useful problem in the NISQ era (analog simulation comes closest, with the moving-target caveat, File 14).
+
+Conversely, the assessment would tilt *more* skeptical if (as has repeatedly happened) more NISQ advantage claims are overturned by classical methods. The honest current state: near-term quantum computing is a bridge and laboratory (capability-building, exploration), not a source of demonstrated practical advantage — and this will remain so until either a benchmarked NISQ advantage on a useful problem materializes (not yet) or fault tolerance (File 18) unlocks the proven exponential advantages (Shor, useful simulation; File 13). Tracking which of these happens — and holding all claims to the checklist standard — is the disciplined posture this file models, and it is the honest foundation for the roadmap-credibility (File 19) and market (File 24) assessments that follow.
