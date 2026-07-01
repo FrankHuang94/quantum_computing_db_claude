@@ -181,3 +181,24 @@ A notable development: **optically-pumped atomic magnetometers** (using laser-pr
 ### 17. Final note
 
 Quantum sensing and metrology are the mature, commercial, revenue-generating face of quantum technology — atomic clocks, NV magnetometers, gravimeters, SQUIDs, and atomic magnetometers delivering realized quantum advantage today, sharing physics and control technology with quantum computing but requiring only the easy part of quantum control (coherent single-/few-system precision) rather than computing's hard part (scalable error correction). This maturity difference is fundamental, not incidental, and it provides three calibrations for assessing quantum computing: sensing shows realized quantum advantage is possible (validating the field's premise), it validates the shared control technology (partly de-risking computing modalities), and it precisely diagnoses computing's remaining challenge as scaling and error correction (Files 9, 11, 18) rather than quantum control per se. When evaluating "quantum technology" claims and markets (File 24), the sensing-vs-computing distinction — mature/deployed vs. pre-revenue/emerging — is essential, and it is a calibration this file contributes to the whole database's honest, grounded assessment of where quantum technologies stand and where quantum computing, specifically, must still go.
+
+---
+
+## Appendix — Sensing Modalities Quick Reference
+
+| Sensor | Platform | Measures | Key advantage | Maturity | Shared with computing |
+|---|---|---|---|---|---|
+| Optical atomic clock | Trapped ions / lattice atoms | Time/frequency | <10⁻¹⁸ uncertainty | Deployed (research/national) | Files 4, 5 (ion/atom control) |
+| NV magnetometer | Diamond NV center | Magnetic field | Room-temp, nanoscale | Commercial | File 7 (NV qubits) |
+| SQUID | Josephson junction loop | Magnetic field | Highest sensitivity | Mature/deployed | File 3 (Josephson physics) |
+| Atomic magnetometer | Alkali vapor | Magnetic field | Room-temp, wearable MEG | Emerging-commercial | Files 4/5 (atomic physics) |
+| Atom-interferometry gravimeter | Cold atoms | Gravity/acceleration | Precision gravity mapping | Commercial | File 5 (cold-atom toolkit) |
+| Squeezed-light interferometer | Squeezed optical states | Displacement (LIGO) | Below shot-noise | Deployed (LIGO) | File 6 (CV photonics) |
+
+**Key calibrations from this file:**
+- Quantum *sensing* delivers realized commercial advantage *today*; quantum *computing* does not yet (Files 20, 24).
+- The difference is fundamental: sensing needs coherent single-/few-system precision (easy); computing needs scalable error-corrected many-qubit control (hard, Files 9, 11, 18).
+- Sensing validates the shared control technology (lasers, trapping, readout) that computing builds on, partly de-risking the computing modalities.
+- Networked/entanglement-enhanced sensing (beyond the SQL toward the Heisenberg limit) connects sensing to quantum networking (File 15).
+
+**One-sentence summary:** Quantum sensing and metrology — atomic clocks, NV and SQUID and atomic magnetometers, cold-atom gravimeters, and squeezed-light interferometers — constitute the mature, deployed, revenue-generating face of quantum technology, exploiting the *easy* part of quantum control (coherent precision measurement) that quantum computing shares but goes beyond, providing the database's essential calibration that realized quantum advantage exists (in sensing), the shared control technology is validated, and computing's specific remaining challenge is scalable error correction (Files 9, 18) — not quantum control itself.

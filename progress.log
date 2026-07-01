@@ -18,8 +18,8 @@ Target: >= 100,000 words total; primary files (02,03,04,05,09,11,12,13,18,20,25)
 - [x] 12_quantum_software_stack_and_compilers.md (PRIMARY, 12,000+ w)
 - [x] 13_quantum_algorithms_deep_dive.md (PRIMARY, 12,000+ w)
 - [x] 14_classical_simulation_of_quantum_circuits.md (4,000+ w)
-- [ ] 15_quantum_networking_and_communication.md
-- [ ] 16_quantum_sensing_and_metrology.md
+- [x] 15_quantum_networking_and_communication.md (~3,800 w)
+- [x] 16_quantum_sensing_and_metrology.md (4,000+ w)
 - [ ] 17_nisq_applications_and_use_cases.md
 - [ ] 18_fault_tolerant_resource_estimation.md (PRIMARY)
 - [ ] 19_company_roadmaps_and_milestones.md
@@ -43,3 +43,4 @@ Target: >= 100,000 words total; primary files (02,03,04,05,09,11,12,13,18,20,25)
 - 2026-07-01: FILE 12 committed (PRIMARY, >12,000 w).
 - 2026-07-01: FILE 13 committed (PRIMARY, >12,000 w).
 - 2026-07-01: FILE 14 committed. Total ~120k words (files 01-14).
+- 2026-07-01: FILES 15, 16 committed. Total ~128k words.
